@@ -15,7 +15,7 @@
 - **Tenant**:
 
 ## Description
-Lorem ipsum...
+Lorem ipsum... fun
 
 ## Features
 - **Feature 1**
