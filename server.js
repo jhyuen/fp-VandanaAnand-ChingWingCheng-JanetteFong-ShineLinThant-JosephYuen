@@ -7,6 +7,8 @@ const express = require('express'),
       mongoose = require('mongoose'),
       Landlord = require("./models/landlord"),
       Tenant = require("./models/tenant"),
+    passport  = require( 'passport' ),
+    Local     = require( 'passport-local' ).Strategy,
       port = 3000;
 
 // automatically deliver all files in the public folder
@@ -36,6 +38,47 @@ mongoose.connect(url,
     }).catch(err => {
       console.log('ERROR: ', err.message);
 });
+
+const myLocalStrategy = function( username, password, done ) {
+    let user
+    console.log("User " + username + " requested")
+    loginInfo.find({}).toArray().then( result => {
+        user = result[0]
+
+        if( user === undefined) {
+            return done(null, false, {message: 'user not found'})
+
+        }
+        else if(user.username === username && user.password === password) {
+            return done(null, {username, password})
+        }
+        else {
+            return done(null, false, {message: 'incorrect password'})
+        }
+    })
+
+}
+
+passport.use( 'local-login', new Local( myLocalStrategy ) )
+passport.initialize()
+
+passport.serializeUser( ( user, done ) => done( null, user.username ) )
+
+passport.deserializeUser( ( username, done ) => {
+    let user
+    loginInfo.find({}).toArray().then(result => {
+        user = result[0]
+        if(user !== undefined) {
+            done(null, user)
+        }
+        else {
+            done(null, false, {message: 'user not found: session not restored'})
+        }
+    })
+})
+
+app.use( passport.initialize() )
+app.use( passport.session() )
 
 app.listen(process.env.PORT || port, process.env.IP, () => {
   console.log("Server is listening on port ", process.env.PORT || port, "...");
