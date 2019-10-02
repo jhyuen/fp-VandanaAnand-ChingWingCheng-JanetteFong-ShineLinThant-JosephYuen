@@ -19,6 +19,7 @@
     "mime": "^2.4.4",
     "module-js": "^7.0.1",
     "module.js": "^2.2.4",
+    "mongoose": "^5.7.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "require.js": "^1.0.0",
