@@ -11,21 +11,47 @@ canvas {
   background-color: #f1f1f1;
 }
 
-.title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.homebtns {
-  display:inline-block;
-
+.center {
+  position: fixed;
+  top: 47%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
 }
 
 #loginBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color:white;
+  border: 4px solid #95BF74;
+  border-radius: 2px;
+  color: #95BF74;
+  padding: 12px 36px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 22px;
+}
 
+#loginBtn:hover {
+  background-color: #95BF74;
+  color: white;
 }
 
 #signupBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color:white;
+  border: 4px solid #7FC8EC;
+  border-radius: 2px;
+  color: #7FC8EC;
+  padding: 12px 36px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 22px;
+}
 
+#signupBtn:hover {
+  background-color: #7FC8EC;
+  color: white;
 }
