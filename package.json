@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "description": "",
   "author": "knockknock",
+  "main": "server.js",
   "scripts": {
-    "start": "node expressserver.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -19,6 +21,7 @@
     "mime": "^2.4.4",
     "module-js": "^7.0.1",
     "module.js": "^2.2.4",
+    "mongoose": "^5.7.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "require.js": "^1.0.0",
