@@ -1,9 +1,9 @@
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
-const helmet = require('helmet')
-const compression = require('compression')
-const favicon = require('serve-favicon')
+const express   = require( 'express' ),
+      app       = express(),
+      bodyParser= require( 'body-parser' ),
+      helmet = require('helmet'),
+      compression = require('compression'),
+      favicon = require('serve-favicon')
 
 // automatically deliver all files in the public folder
 // with the correct headers / MIME type.
