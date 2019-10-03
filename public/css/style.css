@@ -16,6 +16,10 @@ label {
   margin: 5px;
 }
 
+.mainlogo {
+  max-width: 600px;
+  height: auto;
+}
 .center {
   position: fixed;
   top: 47%;
