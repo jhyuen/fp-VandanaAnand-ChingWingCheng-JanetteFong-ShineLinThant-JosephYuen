@@ -120,6 +120,12 @@ label {
   color: #7FC8EC;
 }
 
+#logoform {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
 #loginBtn {
   margin-right: 10px;
   -webkit-transition-duration: 0.4s;
