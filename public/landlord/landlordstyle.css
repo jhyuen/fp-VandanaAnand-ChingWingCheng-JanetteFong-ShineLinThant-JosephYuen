@@ -1,7 +1,7 @@
 body {
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: black;
 }
 
 .welcome {
@@ -11,6 +11,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-110%);
+  color: white;
 }
 
 .logoutBtn {
@@ -55,7 +56,7 @@ body {
   position: fixed;
   top: 10%;
   left: 15%;
-  background-color: #61A49E;
+  background-color: white;
 }
 
 .nav-btn-group .button {
