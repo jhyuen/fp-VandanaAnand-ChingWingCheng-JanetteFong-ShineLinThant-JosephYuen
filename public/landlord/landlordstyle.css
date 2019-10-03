@@ -7,7 +7,7 @@ body {
 .welcome {
   float: left;
   font-size: 30px;
-  margin-left: 25px;
+  margin-left: 2%;
   position: absolute;
   top: 50%;
   transform: translateY(-110%);
