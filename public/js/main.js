@@ -50,7 +50,7 @@ const addUser = function(e){
         email: email
     }
 
-    if(userType === "landlord") {
+    if(userType === "tentant") {
         user.key = document.getElementById("Key").value
     }
 
