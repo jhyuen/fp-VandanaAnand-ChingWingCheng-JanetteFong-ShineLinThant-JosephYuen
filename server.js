@@ -3,10 +3,8 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       helmet = require('helmet'),
       compression = require('compression'),
-      favicon = require('serve-favicon'),
-      mongoose = require('mongoose'),
-      Landlord = require("./models/landlord"),
-      Tenant = require("./models/tenant"),
+      low = require("lowdb"),
+      FileSync = require("lowdb/adapters/FileSync"),
       port = 3000;
 
 // automatically deliver all files in the public folder
@@ -26,16 +24,25 @@ app.get('/', function (request, response) {
 });
 
 // connect to db
-let url = 'mongodb+srv://heartkiller:AsrSNmXn5dMpQgw@operation-mongoose-iyooo.mongodb.net/test?retryWrites=true&w=majority';
-mongoose.connect(url,
-    {
-      useNewUrlParser: true,
-      useCreateIndex: true
-    }).then(() => {
-      console.log('Connected to DB!');
-    }).catch(err => {
-      console.log('ERROR: ', err.message);
-});
+const adapter = new FileSync("database.json")
+const db = low(adapter)
+db.defaults({users: []}).write()
+
+app.post("/signUp", (req, res) => {
+  let user = db.get("users").filter({ username: req.body.username})
+  console.log(user.value().length)
+  if(user.value().length === 0){
+    db.get('users').push(req.body).write()
+
+    res.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+  else{
+    res.writeHead( 422, "user Exist", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+})
+
 
 app.listen(process.env.PORT || port, process.env.IP, () => {
   console.log("Server is listening on port ", process.env.PORT || port, "...");
