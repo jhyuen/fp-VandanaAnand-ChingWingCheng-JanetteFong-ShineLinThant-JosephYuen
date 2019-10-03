@@ -5,9 +5,12 @@ body {
 }
 
 .welcome {
+  float: left;
+  font-size: 30px;
   margin-left: 25px;
-  display: inline-block;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-110%);
 }
 
 .logoutBtn {
@@ -27,7 +30,7 @@ body {
 }
 
 .nav-top {
-  overflow: hidden;
+  overflow: visible;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,16 +63,35 @@ body {
   height: 25%;
 }
 
-#contact{
+#manage{
   background: #F7CD54;
 }
+
+#manage:hover {
+  background: #E5B429;
+}
+
 #calendar{
   background: #F2655A
 }
+
+#calendar:hover {
+  background: #D24B3F
+}
+
 #schedule{
   background: #7FC8EC;
 }
+
+#schedule:hover {
+  background: #66ADCF;
+}
+
 #inbox{
   background: #95BF74;
+}
+
+#inbox:hover {
+  background: #7DA45E;
 }
 
