@@ -55,6 +55,7 @@ const addUser = function(e){
     }
 
     const data = JSON.stringify(user)
+    console.log(user)
 
     fetch("/signUp", {
         method: "POST",
@@ -62,10 +63,13 @@ const addUser = function(e){
         body: data
     })
     .then(function(response){
-        goToLogin();
+        if(response.status === 200) {
+            goToLogin();
+        }
+        else {
+            alert("Username already exists")
+        }
     })
-
-    console.log(user)
 }
 
 /* Vandana Code in login.html
@@ -139,5 +143,6 @@ window.onload = function(){
     tentant.onclick = tentantReg
     let landlord = document.getElementById("landlord")
     landlord.onclick = landlordReg
-    document.getElementById("signUp").onclick = addUser
+    let signUp = document.getElementById("signUp")
+    signUp.onclick = addUser
 }
