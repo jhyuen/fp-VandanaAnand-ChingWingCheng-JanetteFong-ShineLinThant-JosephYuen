@@ -1,61 +1,121 @@
 body {
   background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
-canvas {
-  border:1px solid #d3d3d3;
-  background-color: #f1f1f1;
+.welcome {
+  float: left;
+  font-size: 30px;
+  margin-left: 2%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-110%);
 }
 
-.center {
+.logoutBtn {
+  width: 9%;
+  height: 100%;
+  font-size: 40px;
+  float: right;
+  background-color: #79C4BD;
+  border: none;
+  color: white;
+  padding: 0px 60px;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: #61A49E;
+}
+
+.nav-top {
+  overflow: visible;
   position: fixed;
-  top: 47%;
-  left: 50%;  
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #79C4BD;
+  height: 10%;
 }
 
-.homebtns {
-  display: flex;
-  justify-content: center;
+.nav-btn-group {
+  height: 90%;
+  width: 15%;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 10%;
+  left: 0px;
 }
 
-#loginBtn {
-  margin-right: 10px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.3s;
-  background-color:white;
-  border: 4px solid #95BF74;
-  border-radius: 2px;
-  color: #95BF74;
-  padding: 12px 36px;
-  text-align: center;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 22px;
+.content {
+  height: 90%;
+  width: 85%;
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  background-color: #61A49E;
 }
 
-#loginBtn:hover {
-  cursor: pointer;
-  background-color: #95BF74;
+.nav-btn-group .button {
+  /*background-color: #4CAF50; !* Green *!*/
+  border: none;
   color: white;
-}
-
-#signupBtn {
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.3s;
-  background-color:white;
-  border: 4px solid #7FC8EC;
-  border-radius: 2px;
-  color: #7FC8EC;
-  padding: 12px 36px;
+  padding: 10px;
   text-align: center;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 22px;
+  text-decoration: none;
+  font-size: 550%;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  height: 25%;
 }
 
-#signupBtn:hover {
-  cursor: pointer;
-  background-color: #7FC8EC;
-  color: white;
+#contactScreen {
+  display: block;
+}
+
+#calendarScreen {
+  display: none;
+}
+
+#inquiryScreen {
+  display: none;
+}
+
+#paymentScreen {
+  display: none;
+}
+
+#contact {
+  background: #F7CD54;
+}
+
+#contact:hover {
+  background: #E5B429;
+}
+
+#calendar {
+  background: #F2655A
+}
+
+#calendar:hover {
+  background: #D24B3F
+}
+
+#inquiry {
+  background: #7FC8EC;
+}
+
+#inquiry:hover {
+  background: #66ADCF;
+}
+
+#payment {
+  background: #95BF74;
+}
+
+#payment:hover {
+  background: #7DA45E;
 }

@@ -1,17 +1,47 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>CS4241 Final Project - Tenant</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-          type="text/css"
-          href="tenantstyle.css" />
-  </head>
-  <body>
-    <h1>Tenant</h1>
-    
-  </body>
+
+<head>
+  <title>CS4241 Final Project - Tenant</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="tenantstyle.css" />
+</head>
+
+<body>
+  <div class="nav-top">
+    <h1 class="welcome">Welcome firstName lastName</h1>
+    <button class="logoutBtn"><i class="fa fa-sign-out"></i></button>
+  </div>
+
+  <div class="nav-btn-group">
+    <button id="contact" class="button"><i class="fa fa-address-card"></i></button>
+    <button id="calendar" class="button"><i class="fa fa-calendar"></i></button>
+    <button id="inquiry" class="button"><i class="fa fa-commenting"></i></button>
+    <button id="payment" class="button"><i class="fa fa-credit-card"></i></button>
+  </div>
+
+  <div class="content">
+    <div id="contactScreen">
+      <h3>Contact</h3>
+    </div>
+
+    <div id="calendarScreen">
+      <h3>Calendar</h3>
+    </div>
+
+    <div id="inquiryScreen">
+      <h3>Inquiry</h3>
+    </div>
+
+    <div id="paymentScreen">
+      <h3>Payment</h3>
+    </div>
+
+  </div>
+  <script src="tenantscript.js"></script>
+
+</body>
 
 </html>

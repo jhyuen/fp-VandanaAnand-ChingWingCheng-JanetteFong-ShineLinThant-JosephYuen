@@ -22,7 +22,7 @@ body {
   border: none;
   color: white;
   padding: 0px 60px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .logoutBtn:hover {
@@ -39,9 +39,9 @@ body {
   height: 10%;
 }
 
-.nav-btn-group{
+.nav-btn-group {
   height: 90%;
-  width: 17%;
+  width: 15%;
   margin: 0px;
   padding: 0px;
   position: fixed;
@@ -49,21 +49,46 @@ body {
   left: 0px;
 }
 
+.content {
+  height: 90%;
+  width: 85%;
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  background-color: #61A49E;
+}
+
 .nav-btn-group .button {
   /*background-color: #4CAF50; !* Green *!*/
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 550%;
   cursor: pointer;
   width: 100%;
   display: block;
   height: 25%;
 }
 
-#manage{
+#managementScreen {
+  display: block;
+}
+
+#calendarScreen {
+  display: none;
+}
+
+#scheduleScreen {
+  display: none;
+}
+
+#inboxScreen {
+  display: none;
+}
+
+#manage {
   background: #F7CD54;
 }
 
@@ -71,7 +96,7 @@ body {
   background: #E5B429;
 }
 
-#calendar{
+#calendar {
   background: #F2655A
 }
 
@@ -79,7 +104,7 @@ body {
   background: #D24B3F
 }
 
-#schedule{
+#schedule {
   background: #7FC8EC;
 }
 
@@ -87,11 +112,10 @@ body {
   background: #66ADCF;
 }
 
-#inbox{
+#inbox {
   background: #95BF74;
 }
 
 #inbox:hover {
   background: #7DA45E;
 }
-
