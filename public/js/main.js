@@ -6,6 +6,8 @@ mod2.hello()
 
 console.log('main.js')
 
+let userType
+
 function goToSignUp() {
   window.location.href = '/signup.html';
 }
@@ -16,12 +18,14 @@ function goToLogin() {
 
 const tentantReg = function(e){
     e.preventDefault()
+    userType = "landlord"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
 }
 
 const landlordReg = function(e){
     e.preventDefault()
+    userType = "tentant"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
     document.getElementById("KeyInput").style.display = "none"
@@ -35,17 +39,31 @@ const addUser = function(e){
     let password = document.getElementById("Password").value
     let phoneNum = document.getElementById("PhoneNumber").value
     let email = document.getElementById("Email").value
-    let key = document.getElementById("Key").value
 
     let user = {
+        userType: userType,
         first: firstName,
         last: lastName,
         username: username,
         password: password,
         phone: phoneNum,
-        email: email,
-        key: key
+        email: email
     }
+
+    if(userType === "tentant") {
+        user.key = document.getElementById("Key").value
+    }
+
+    const data = JSON.stringify(user)
+
+    fetch("/signUp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: data
+    })
+    .then(function(response){
+        goToLogin();
+    })
 
     console.log(user)
 }
