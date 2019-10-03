@@ -7,6 +7,7 @@ const express = require('express'),
     mongoose = require('mongoose'),
     Landlord = require("./models/landlord"),
     Tenant = require("./models/tenant"),
+    User = require("./models/user"),
     passport  = require( 'passport' ),
     LocalStrategy = require( 'passport-local'),
     port = 3000;
@@ -27,6 +28,8 @@ app.get('/', function (request, response) {
     response.send('hello, world!');
 });
 
+//var url = process.env.DATABASEURL || "mongodb://localhost/marketplace_beta";
+
 // connect to db
 let url = 'mongodb+srv://heartkiller:AsrSNmXn5dMpQgw@operation-mongoose-iyooo.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(url,
@@ -39,47 +42,6 @@ mongoose.connect(url,
     console.log('ERROR: ', err.message);
 });
 
-// const myLocalStrategy = function( username, password, done ) {
-//     let user
-//     console.log("User " + username + " requested")
-//     loginInfo.find({}).toArray().then( result => {
-//         user = result[0]
-//
-//         if( user === undefined) {
-//             return done(null, false, {message: 'user not found'})
-//
-//         }
-//         else if(user.username === username && user.password === password) {
-//             return done(null, {username, password})
-//         }
-//         else {
-//             return done(null, false, {message: 'incorrect password'})
-//         }
-//     })
-//
-// }
-//
-// passport.use( 'local-login', new Local( myLocalStrategy ) )
-// passport.initialize()
-//
-// passport.serializeUser( ( user, done ) => done( null, user.username ) )
-//
-// passport.deserializeUser( ( username, done ) => {
-//     let user
-//     loginInfo.find({}).toArray().then(result => {
-//         user = result[0]
-//         if(user !== undefined) {
-//             done(null, user)
-//         }
-//         else {
-//             done(null, false, {message: 'user not found: session not restored'})
-//         }
-//     })
-// })
-//
-// app.use( passport.initialize() )
-// app.use( passport.session() )
-
 // Passport Configuration
 app.use(require("express-session")({
     secret: "This is a sample secret text for encoding",
@@ -89,13 +51,25 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(Landlord.authenticate()));
-passport.serializeUser(Landlord.serializeUser());
-passport.deserializeUser(Landlord.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-passport.use(new LocalStrategy(Tenant.authenticate()));
-passport.serializeUser(Tenant.serializeUser());
-passport.deserializeUser(Tenant.deserializeUser());
+// passport.use(new LocalStrategy(Landlord.authenticate()));
+// passport.serializeUser(Landlord.serializeUser());
+// passport.deserializeUser(Landlord.deserializeUser());
+//
+// passport.use(new LocalStrategy(Tenant.authenticate()));
+// passport.serializeUser(Tenant.serializeUser());
+// passport.deserializeUser(Tenant.deserializeUser());
+
+// Middleware to pass user and message data to each route
+// app.use((req, res, next) => {
+//     res.locals.currentUser = req.user;
+//     res.locals.error = req.flash("error");
+//     res.locals.success = req.flash("success");
+//     next();
+// });
 
 app.listen(process.env.PORT || port, process.env.IP, () => {
     console.log("Server is listening on port ", process.env.PORT || port, "...");
