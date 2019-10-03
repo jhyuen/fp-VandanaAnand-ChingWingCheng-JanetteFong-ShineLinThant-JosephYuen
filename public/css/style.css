@@ -10,7 +10,7 @@ input {
   padding: 5px;
 }
 
-label{
+label {
   font-size: 15pt;
   width: 264px;
   margin: 5px;
@@ -19,7 +19,7 @@ label{
 .center {
   position: fixed;
   top: 47%;
-  left: 50%;  
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -39,7 +39,7 @@ label{
   border: none;
   color: white;
   padding: 20px 26px;
-  cursor: pointer; 
+  cursor: pointer;
   border-radius: 50px;
 }
 
@@ -58,7 +58,7 @@ label{
   border: none;
   color: white;
   padding: 20px 26px;
-  cursor: pointer; 
+  cursor: pointer;
   border-radius: 50px;
 }
 
@@ -66,11 +66,65 @@ label{
   background-color: #66ADCF;
 }
 
+.formHeader {
+  margin-top: 50px;
+}
+
+.signupBtnFun {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: white;
+  border: 4px solid #7FC8EC;
+  border-radius: 2px;
+  color: #7FC8EC;
+  padding: 12px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.signupBtnFun:hover {
+  cursor: pointer;
+  background-color: #7FC8EC;
+  color: white;
+}
+
+.loginBtnFun {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: white;
+  border: 4px solid #95BF74;
+  border-radius: 2px;
+  width: 200px;
+  color: #95BF74;
+  padding: 12px 36px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.loginBtnFun:hover {
+  cursor: pointer;
+  background-color: #95BF74;
+  color: white;
+}
+
+.logincolor {
+  color: #95BF74;
+}
+
+.signupcolor {
+  color: #7FC8EC;
+}
+
 #loginBtn {
   margin-right: 10px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.3s;
-  background-color:white;
+  background-color: white;
   border: 4px solid #95BF74;
   border-radius: 2px;
   color: #95BF74;
@@ -90,7 +144,7 @@ label{
 #signupBtn {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.3s;
-  background-color:white;
+  background-color: white;
   border: 4px solid #7FC8EC;
   border-radius: 2px;
   color: #7FC8EC;
@@ -107,8 +161,9 @@ label{
   color: white;
 }
 
-#userType, #form, #KeyInput{
+#userType, #form, #KeyInput {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
