@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>CS4241 Final Project - Sign Up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-          type="text/css"
-          href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
+
 <body>
-    <button class="signupToHome" onclick="window.location.href='/index.html'"><i class="fa fa-chevron-left"></i></button>
+    <div class="signupcolor">
+    <!-- Back Button -->
+    <button class="signupToHome" onclick="window.location.href='/index.html'"><i
+            class="fa fa-chevron-left"></i></button>
 
-    <section class ="registration">
-        <div>
-            <div id="userType">
-                <button id="tentant">Tenant</button>
-                <button id="landlord">Landlord</button>
-            </div>
-            
-            <div id="form" style="display: none">
-                <h2>SIGN UP</h2>
-                <label for="FirstName">First Name</label>
-                <input id="FirstName" type="text" placeholder="John">
+    <!-- Select User -->
+    <div id="userType">
+        <h1 class="formHeader">SIGN UP</h1>
+        <h2>Who are you...</h2>
+        <button class="signupBtnFun" id="tentant">Tenant</button>
+        <button class="signupBtnFun" style="margin-top: 10px;" id="landlord">Landlord</button>
+    </div>
 
-                <label for="LastName">Last Name</label>
-                <input id="LastName" type="text" placeholder="Smith">
+    <!-- Sign Up Form -->
+    <div id="form" style="display: none">
+        <h1 class="formHeader">SIGN UP</h1>
 
-                <label for="Username">Username</label>
-                <input id="Username" type="text" placeholder="John89">
+        <label for="FirstName">First Name</label>
+        <input id="FirstName" type="text" placeholder="John">
 
-                <label for="Password">Password</label>
-                <input id="Password" type="password">
+        <label for="LastName">Last Name</label>
+        <input id="LastName" type="text" placeholder="Smith">
 
-                <label for="PhoneNumber">Phone Number</label>
-                <input id="PhoneNumber" type="number" placeholder="9997774444">
+        <label for="Username">Username</label>
+        <input id="Username" type="text" placeholder="John89">
 
-                <label for="Email">Email</label>
-                <input id="Email" type="text" placeholder="John@gmail.com">
+        <label for="Password">Password</label>
+        <input id="Password" type="password">
 
-                <div id="KeyInput">
-                    <label for="Key">Landlord Key</label>
-                    <input id="Key" type="text" placeholder="55Smith1">
-                </div>
+        <label for="PhoneNumber">Phone Number</label>
+        <input id="PhoneNumber" type="number" placeholder="***-***-****">
 
-                <button id="signUp">Sign Up</button>
-            </div>
+        <label for="Email">Email</label>
+        <input id="Email" type="text" placeholder="John@gmail.com">
+
+        <!-- Visible ONLY for Tenant -->
+        <div id="KeyInput">
+            <label for="Key">Landlord Key</label>
+            <input id="Key" type="text" placeholder="55Smith1">
         </div>
-    </section>
+
+        <!-- Sign Up Button -->
+        <button class="signupBtnFun" style="margin-top:20px;" id="signUp">Sign Up</button>
+
+    </div>
+    </div>
     <script src="js/main.js" type="module"></script>
 </body>
+
 </html>
