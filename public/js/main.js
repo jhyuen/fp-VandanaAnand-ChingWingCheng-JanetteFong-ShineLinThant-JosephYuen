@@ -6,6 +6,13 @@ mod2.hello()
 
 console.log('main.js')
 
+function goToSignUp() {
+  window.location.href = '/signup.html';
+}
+
+function goToLogin() {
+  window.location.href = '/login.html';
+}
 
 const tentantReg = function(e){
     e.preventDefault()
