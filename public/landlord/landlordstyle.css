@@ -7,11 +7,12 @@ body {
 .welcome {
   margin-left: 25px;
   display: inline-block;
+  height: 100%;
 }
 
 .logoutBtn {
   width: 9%;
-  height: 80px;
+  height: 100%;
   font-size: 40px;
   float: right;
   background-color: #79C4BD;
@@ -32,17 +33,41 @@ body {
   left: 0;
   width: 100%;
   background-color: #79C4BD;
+  height: 10%;
+}
+
+.nav-btn-group{
+  height: 90%;
+  width: 17%;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 10%;
+  left: 0px;
 }
 
 .nav-btn-group .button {
-  background-color: #4CAF50; /* Green */
-  border: 1px solid green;
+  /*background-color: #4CAF50; !* Green *!*/
+  border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  width: 150px;
+  width: 100%;
   display: block;
+  height: 25%;
+}
+
+#contact{
+  background: #F7CD54;
+}
+#calendar{
+  background: #F2655A
+}
+#schedule{
+  background: #7FC8EC;
+}
+#inbox{
+  background: #95BF74;
 }
