@@ -1,3 +1,13 @@
+import * as manage from './manage.js'
+import * as calendar from './calendar.js'
+import * as schedule from './schedule.js'
+import * as inbox from './inbox.js'
+
+manage.hello()
+calendar.hello()
+schedule.hello()
+inbox.hello()
+
 // Nav Buttons
 var managementBtn = document.getElementById("manage")
 var calendarBtn = document.getElementById("calendar")
@@ -5,7 +15,7 @@ var scheduleBtn = document.getElementById("schedule")
 var inboxBtn = document.getElementById("inbox")
 
 // Content Screens
-var managementScreen = document.getElementById("managementScreen")
+var managementScreen = document.getElementById("manageScreen")
 var calendarScreen = document.getElementById("calendarScreen")
 var scheduleScreen = document.getElementById("scheduleScreen")
 var inboxScreen = document.getElementById("inboxScreen")
@@ -29,7 +39,7 @@ const switchToManagement = function(e) {
     scheduleScreen.style.display = 'none'
     inboxScreen.style.display = 'none'
 
-    console.log("Management")
+    console.log("Manage")
 }
 
 const switchToCalendar = function(e) {

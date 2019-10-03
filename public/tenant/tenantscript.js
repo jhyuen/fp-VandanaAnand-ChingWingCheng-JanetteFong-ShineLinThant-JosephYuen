@@ -1,3 +1,13 @@
+import * as contact from './contact.js'
+import * as calendar from './calendar.js'
+import * as inquiry from './inquiry.js'
+import * as payment from './payment.js'
+
+contact.hello()
+calendar.hello()
+inquiry.hello()
+payment.hello()
+
 // Nav Buttons
 var contactBtn = document.getElementById("contact")
 var calendarBtn = document.getElementById("calendar")
