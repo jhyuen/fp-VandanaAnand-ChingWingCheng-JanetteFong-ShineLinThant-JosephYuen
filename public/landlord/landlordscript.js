@@ -1,7 +1,7 @@
-import * as manage from './manage.js'
-import * as calendar from './calendar.js'
-import * as schedule from './schedule.js'
-import * as inbox from './inbox.js'
+import * as manage from './mods/manage.js'
+import * as calendar from './mods/calendar.js'
+import * as schedule from './mods/schedule.js'
+import * as inbox from './mods/inbox.js'
 
 manage.hello()
 calendar.hello()

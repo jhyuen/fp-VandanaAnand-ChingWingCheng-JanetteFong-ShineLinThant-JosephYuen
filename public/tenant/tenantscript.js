@@ -1,7 +1,7 @@
-import * as contact from './contact.js'
-import * as calendar from './calendar.js'
-import * as inquiry from './inquiry.js'
-import * as payment from './payment.js'
+import * as contact from './mods/contact.js'
+import * as calendar from './mods/calendar.js'
+import * as inquiry from './mods/inquiry.js'
+import * as payment from './mods/payment.js'
 
 contact.hello()
 calendar.hello()
