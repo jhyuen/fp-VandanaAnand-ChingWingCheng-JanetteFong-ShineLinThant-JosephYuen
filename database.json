@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "userType": "tentant",
+      "first": "Winny",
+      "last": "Cheng",
+      "username": "ccheng",
+      "password": "123",
+      "phone": "123",
+      "email": "123",
+      "key": ""
+    },
+    {
+      "userType": "tentant",
+      "first": "Winny",
+      "last": "Cheng",
+      "username": "ccheng2",
+      "password": "12345",
+      "phone": "2223334444",
+      "email": "ccheng@gmail.com",
+      "key": ""
+    }
+  ]
+}
