@@ -16,6 +16,10 @@ function goToLogin() {
   window.location.href = '/login.html';
 }
 
+function goToLandlordPage() {
+    window.location.href = '/landlord/landlord.html';
+}
+
 const tentantReg = function(e){
     e.preventDefault()
     userType = "landlord"
@@ -72,37 +76,41 @@ const addUser = function(e){
     })
 }
 
-/* Vandana Code in login.html
-<script>
-
-  const login = function(e){
+const login = function(e){
     e.preventDefault();
-
     const username=document.getElementById('username').value,
-            password= document.getElementById('password').value;
-
+        password= document.getElementById('password').value;
     const user = {
-              'username': username,
-              'password' : password
-            },
-            body = JSON.stringify(user);
+            'username': username,
+            'password' : password
+        },
+        body = JSON.stringify(user);
+
+    console.log(user)
 
     fetch('/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body
     }).then(function(response){
-      if(response.status===200){
-        document.getElementById('loginForm').style.display="none";
-        document.getElementById('mainForm').style.display="";
-
-      }else{
-        //console.log("error")
-        window.alert("Username or password not found")
-      }
+        if(response.status===200){
+            console.log("200 Sent successfully")
+            goToLandlordPage()
+        }else{
+            //console.log("error")
+            window.alert("Username or password not found")
+        }
 
     })
-  };
+};
+
+const signUpFromLogin = function(e) {
+    e.preventDefault()
+    goToSignUp()
+}
+
+/* Vandana Code in login.html
+<script>
 
   const submit = function( e ) {
     // prevent default form action from being carried out
@@ -139,10 +147,17 @@ const addUser = function(e){
 */
 
 window.onload = function(){
-    let tentant = document.getElementById("tentant")
-    tentant.onclick = tentantReg
-    let landlord = document.getElementById("landlord")
-    landlord.onclick = landlordReg
-    let signUp = document.getElementById("signUp")
-    signUp.onclick = addUser
+    // let tentant = document.getElementById("tentant")
+    // tentant.onclick = tentantReg
+    // let landlord = document.getElementById("landlord")
+    // landlord.onclick = landlordReg
+    // let signUp = document.getElementById("signUp")
+    // signUp.onclick = addUser
+
+    // const loginBtn = document.getElementById('loginButton')
+    // loginBtn.onclick = login
+    // const loginSignUpBtn = document.getElementById('registerButton')
+    // loginSignUpBtn.onclick = signUpFromLogin
 }
+
+export {tentantReg, landlordReg, addUser, login, signUpFromLogin}

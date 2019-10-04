@@ -63,6 +63,17 @@
     </div>
     </div>
     <script src="js/main.js" type="module"></script>
+    <script type="module">
+        import {tentantReg, landlordReg, addUser} from "./js/main.js";
+        window.onload = function() {
+            let tentant = document.getElementById("tentant")
+            tentant.onclick = tentantReg
+            let landlord = document.getElementById("landlord")
+            landlord.onclick = landlordReg
+            let signUp = document.getElementById("signUp")
+            signUp.onclick = addUser
+        }
+    </script>
 </body>
 
 </html>

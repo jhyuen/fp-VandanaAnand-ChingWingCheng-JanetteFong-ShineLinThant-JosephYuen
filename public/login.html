@@ -41,6 +41,15 @@
   </div>
   </div>
   <script src="js/main.js" type="module"></script>
+  <script type="module">
+    import {login, signUpFromLogin} from "./js/main.js";
+    window.onload = function() {
+      const loginBtn = document.getElementById('loginButton')
+      loginBtn.onclick = login
+      const loginSignUpBtn = document.getElementById('registerButton')
+      loginSignUpBtn.onclick = signUpFromLogin
+    }
+  </script>
 </body>
 
 </html>
