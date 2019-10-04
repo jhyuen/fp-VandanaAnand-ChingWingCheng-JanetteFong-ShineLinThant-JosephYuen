@@ -19,6 +19,15 @@
       "phone": "2223334444",
       "email": "ccheng@gmail.com",
       "key": ""
+    },
+    {
+      "userType": "landlord",
+      "first": "Janette",
+      "last": "Fong",
+      "username": "janette",
+      "password": "janette1",
+      "phone": "1",
+      "email": "jlfong@wpi.edu"
     }
   ]
 }
