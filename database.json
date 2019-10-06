@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "userType": "tentant",
+      "userType": "tenant",
       "first": "Winny",
       "last": "Cheng",
       "username": "ccheng",
