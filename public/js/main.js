@@ -6,15 +6,30 @@ mod2.hello()
 
 console.log('main.js')
 
+let userType
+
+function goToSignUp() {
+  window.location.href = '/signup.html';
+}
+
+function goToLogin() {
+  window.location.href = '/login.html';
+}
+
+function goToLandlordPage() {
+    window.location.href = '/landlord/landlord.html';
+}
 
 const tentantReg = function(e){
     e.preventDefault()
+    userType = "landlord"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
 }
 
 const landlordReg = function(e){
     e.preventDefault()
+    userType = "tentant"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
     document.getElementById("KeyInput").style.display = "none"
@@ -28,26 +43,121 @@ const addUser = function(e){
     let password = document.getElementById("Password").value
     let phoneNum = document.getElementById("PhoneNumber").value
     let email = document.getElementById("Email").value
-    let key = document.getElementById("Key").value
 
     let user = {
+        userType: userType,
         first: firstName,
         last: lastName,
         username: username,
         password: password,
         phone: phoneNum,
-        email: email,
-        key: key
+        email: email
     }
 
+    if(userType === "tentant") {
+        user.key = document.getElementById("Key").value
+    }
+
+    const data = JSON.stringify(user)
     console.log(user)
+
+    fetch("/signUp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: data
+    })
+    .then(function(response){
+        if(response.status === 200) {
+            goToLogin();
+        }
+        else {
+            alert("Username already exists")
+        }
+    })
 }
 
+const login = function(e){
+    e.preventDefault();
+    const username=document.getElementById('username').value,
+        password= document.getElementById('password').value;
+    const user = {
+            'username': username,
+            'password' : password
+        },
+        body = JSON.stringify(user);
+
+    console.log(user)
+
+    fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body
+    }).then(function(response){
+        if(response.status===200){
+            console.log("200 Sent successfully")
+            goToLandlordPage()
+        }else{
+            //console.log("error")
+            window.alert("Username or password not found")
+        }
+
+    })
+};
+
+const signUpFromLogin = function(e) {
+    e.preventDefault()
+    goToSignUp()
+}
+
+/* Vandana Code in login.html
+<script>
+
+  const submit = function( e ) {
+    // prevent default form action from being carried out
+    e.preventDefault();
+
+    fetch( '/submit', { //url name = /submit
+      method:'POST',
+      headers: { 'Content-Type': 'application/json' },
+
+    })
+            .then( function( response ) {
+              document.getElementById('mainForm').style.display = "";
+              document.getElementById('loginForm').style.display ="none"
+            });
+
+    return false
+  };
+
+  window.onload = function() {
+    fetch( '/test', {
+      method:'POST',
+      credentials: 'include'
+    }).then( console.log )
+            .catch( err => console.error );
+    const button = document.querySelector( '#submitForm' );
+    button.onclick = submit;
+
+    const loginBtn = document.querySelector('#loginButton');
+    loginBtn.onclick = login
+
+  }
+
+</script>
+*/
 
 window.onload = function(){
-    let tentant = document.getElementById("tentant")
-    tentant.onclick = tentantReg
-    let landlord = document.getElementById("landlord")
-    landlord.onclick = landlordReg
-    document.getElementById("signUp").onclick = addUser
+    // let tentant = document.getElementById("tentant")
+    // tentant.onclick = tentantReg
+    // let landlord = document.getElementById("landlord")
+    // landlord.onclick = landlordReg
+    // let signUp = document.getElementById("signUp")
+    // signUp.onclick = addUser
+
+    // const loginBtn = document.getElementById('loginButton')
+    // loginBtn.onclick = login
+    // const loginSignUpBtn = document.getElementById('registerButton')
+    // loginSignUpBtn.onclick = signUpFromLogin
 }
+
+export {tentantReg, landlordReg, addUser, login, signUpFromLogin}

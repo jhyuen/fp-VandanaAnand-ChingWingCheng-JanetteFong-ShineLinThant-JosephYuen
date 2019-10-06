@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "userType": "tentant",
+      "first": "Winny",
+      "last": "Cheng",
+      "username": "ccheng",
+      "password": "123",
+      "phone": "123",
+      "email": "123",
+      "key": ""
+    },
+    {
+      "userType": "landlord",
+      "first": "Janette",
+      "last": "Fong",
+      "username": "janette",
+      "password": "janette1",
+      "phone": "1",
+      "email": "jlfong@wpi.edu"
+    }
+  ]
+}

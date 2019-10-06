@@ -1,33 +1,80 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>CS4241 Final Project - Landlord</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-          type="text/css"
-          href="landlordstyle.css" />
-  </head>
-  <body>
-    <div class="nav-top">
-        <h1 class="welcome">Welcome Joe Yuen</h1>
-        <button class="logoutBtn"><i class="fa fa-sign-out"></i></button>
+
+<head>
+  <title>CS4241 Final Project - Landlord</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="landlordstyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="nav-top">
+    <h1 class="welcome">Welcome firstName lastName</h1>
+    <button class="logoutBtn"><i class="fa fa-sign-out"></i></button>
+  </div>
+
+  <div class="nav-btn-group">
+    <button id="manage" class="button"><i class="fa fa-address-book"></i></button>
+    <button id="calendar" class="button"><i class="fa fa-calendar"></i></button>
+    <button id="schedule" class="button"><i class="fa fa-pencil"></i></button>
+    <button id="inbox" class="button"><i class="fa fa-envelope"></i></button>
+  </div>
+
+  <div class="content">
+    <div id="manageScreen">
+      <h3>Manage</h3>
     </div>
 
-    <div class="nav-btn-group">
-        <button class="button">Contact</button>
-        <button class="button">Calendar</button>
-        <button class="button">Scheduler</button>
-        <button class="button">Inbox</button>
+    <div id="calendarScreen">
+      <div class="container">
+        <div id="my-calendar" class="material-theme red"></div>
+        <div id="events">
+          <h3>Events</h3>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+
+        var element = document.getElementById("my-calendar");
+        var myCalendar = jsCalendar.new({
+          target: element,
+          monthFormat: "month YYYY"
+        });
+
+        myCalendar.onDateClick(function(event, date){
+          //selecting a day
+          myCalendar.clearSelected();
+          myCalendar.select(date);
+
+          myCalendar.onDateRender(function(date, element, info){
+            //if theres event on date
+              //change color of date and/or bold
+          });
+
+          console.log(date.toString().substring(4, 15));
+        });
+
+      </script>
+
+
     </div>
 
-    <div class="content">
-        <h3>Content goes here</h3>
+    <div id="scheduleScreen">
+      <h3>Schedule</h3>
     </div>
-    
-    
-    
-  </body>
+
+    <div id="inboxScreen">
+      <h3>Inbox</h3>
+    </div>
+
+  </div>
+
+  <script type="module" src="landlordscript.js"></script>
+
+</body>
 
 </html>
