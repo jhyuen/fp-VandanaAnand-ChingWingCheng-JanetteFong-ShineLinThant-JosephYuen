@@ -19,6 +19,9 @@ function goToLogin() {
 function goToLandlordPage() {
     window.location.href = '/landlord/landlord.html';
 }
+function goToTenantPage() {
+    window.location.href = '/tenant/tenant.html';
+}
 
 const tentantReg = function(e){
     e.preventDefault()
@@ -95,12 +98,18 @@ const login = function(e){
     }).then(function(response){
         if(response.status===200){
             console.log("200 Sent successfully")
-            goToLandlordPage()
         }else{
             //console.log("error")
             window.alert("Username or password not found")
         }
-
+        return response.json()
+    }).then(function(data){
+        if(data === "tentant"){
+            goToTenantPage()
+        }
+        else{
+            goToLandlordPage()
+        }
     })
 };
 
