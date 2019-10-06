@@ -19,8 +19,11 @@ function goToLogin() {
 function goToLandlordPage() {
     window.location.href = '/landlord/landlord.html';
 }
+function goToTenantPage() {
+    window.location.href = '/tenant/tenant.html';
+}
 
-const tentantReg = function(e){
+const tenantReg = function(e){
     e.preventDefault()
     userType = "landlord"
     document.getElementById("form").style.display = ""
@@ -29,7 +32,7 @@ const tentantReg = function(e){
 
 const landlordReg = function(e){
     e.preventDefault()
-    userType = "tentant"
+    userType = "tenant"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
     document.getElementById("KeyInput").style.display = "none"
@@ -44,6 +47,10 @@ const addUser = function(e){
     let phoneNum = document.getElementById("PhoneNumber").value
     let email = document.getElementById("Email").value
 
+    if(firstName === "" ||
+    lastName === "" ||
+    )
+
     let user = {
         userType: userType,
         first: firstName,
@@ -54,7 +61,7 @@ const addUser = function(e){
         email: email
     }
 
-    if(userType === "tentant") {
+    if(userType === "tenant") {
         user.key = document.getElementById("Key").value
     }
 
@@ -95,12 +102,18 @@ const login = function(e){
     }).then(function(response){
         if(response.status===200){
             console.log("200 Sent successfully")
-            goToLandlordPage()
         }else{
             //console.log("error")
             window.alert("Username or password not found")
         }
-
+        return response.json()
+    }).then(function(data){
+        if(data === "tenant"){
+            goToTenantPage()
+        }
+        else{
+            goToLandlordPage()
+        }
     })
 };
 
@@ -146,18 +159,4 @@ const signUpFromLogin = function(e) {
 </script>
 */
 
-window.onload = function(){
-    // let tentant = document.getElementById("tentant")
-    // tentant.onclick = tentantReg
-    // let landlord = document.getElementById("landlord")
-    // landlord.onclick = landlordReg
-    // let signUp = document.getElementById("signUp")
-    // signUp.onclick = addUser
-
-    // const loginBtn = document.getElementById('loginButton')
-    // loginBtn.onclick = login
-    // const loginSignUpBtn = document.getElementById('registerButton')
-    // loginSignUpBtn.onclick = signUpFromLogin
-}
-
-export {tentantReg, landlordReg, addUser, login, signUpFromLogin}
+export {tenantReg, landlordReg, addUser, login, signUpFromLogin}
