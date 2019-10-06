@@ -25,14 +25,14 @@ function goToTenantPage() {
 
 const tenantReg = function(e){
     e.preventDefault()
-    userType = "landlord"
+    userType = "tenant"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
 }
 
 const landlordReg = function(e){
     e.preventDefault()
-    userType = "tenant"
+    userType = "landlord"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
     document.getElementById("KeyInput").style.display = "none"
@@ -48,39 +48,48 @@ const addUser = function(e){
     let email = document.getElementById("Email").value
 
     if(firstName === "" ||
-    lastName === "" ||
-    )
-
-    let user = {
-        userType: userType,
-        first: firstName,
-        last: lastName,
-        username: username,
-        password: password,
-        phone: phoneNum,
-        email: email
-    }
-
-    if(userType === "tenant") {
-        user.key = document.getElementById("Key").value
-    }
-
-    const data = JSON.stringify(user)
-    console.log(user)
-
-    fetch("/signUp", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: data
-    })
-    .then(function(response){
-        if(response.status === 200) {
-            goToLogin();
+        lastName === "" ||
+        username === "" ||
+        password === "" ||
+        phoneNum === "" ||
+        email === ""){
+        alert("Please fill in all sections")
+    }else{
+        let user = {
+            userType: userType,
+            first: firstName,
+            last: lastName,
+            username: username,
+            password: password,
+            phone: phoneNum,
+            email: email
         }
-        else {
-            alert("Username already exists")
+
+        if(userType === "tenant") {
+            let key = document.getElementById("Key").value
+            if(key === "") {
+                alert("Landlord key invaild")
+                return
+            }
         }
-    })
+
+        const data = JSON.stringify(user)
+        console.log(user)
+
+        fetch("/signUp", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: data
+        })
+            .then(function(response){
+                if(response.status === 200) {
+                    goToLogin();
+                }
+                else {
+                    alert("Username already exists")
+                }
+            })
+    }
 }
 
 const login = function(e){
