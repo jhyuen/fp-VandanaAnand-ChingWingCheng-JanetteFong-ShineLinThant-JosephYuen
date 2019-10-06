@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="landlordstyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,7 +30,37 @@
     </div>
 
     <div id="calendarScreen">
-      <h3>Calendar</h3>
+      <div class="container">
+        <div id="my-calendar" class="material-theme red"></div>
+        <div id="events">
+          <h3>Events</h3>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+
+        var element = document.getElementById("my-calendar");
+        var myCalendar = jsCalendar.new({
+          target: element,
+          monthFormat: "month YYYY"
+        });
+
+        myCalendar.onDateClick(function(event, date){
+          //selecting a day
+          myCalendar.clearSelected();
+          myCalendar.select(date);
+
+          myCalendar.onDateRender(function(date, element, info){
+            //if theres event on date
+              //change color of date and/or bold
+          });
+
+          console.log(date.toString().substring(4, 15));
+        });
+
+      </script>
+
+
     </div>
 
     <div id="scheduleScreen">
