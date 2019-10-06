@@ -82,8 +82,11 @@ app.post("/signUp", (req, res) => {
 app.post('/login',
     passport.authenticate('local-login', {}),
     function (req, res) {
-      console.log('login works')
-      res.redirect('/');
+      let user = db.get('users').find({username: req.body.username})
+      let type = user.value().userType
+      res.end(JSON.stringify(type))
+      // console.log('login works')
+      // res.redirect('/');
     }
 );
 

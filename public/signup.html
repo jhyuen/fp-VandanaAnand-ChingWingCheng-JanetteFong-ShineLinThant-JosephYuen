@@ -25,7 +25,7 @@
     <div id="userType">
         <h1 class="formHeader">SIGN UP</h1>
         <h2>Who are you...</h2>
-        <button class="signupBtnFun" id="tentant">Tenant</button>
+        <button class="signupBtnFun" id="tenant">Tenant</button>
         <button class="signupBtnFun" style="margin-top: 10px;" id="landlord">Landlord</button>
     </div>
 
@@ -64,10 +64,10 @@
     </div>
     <script src="js/main.js" type="module"></script>
     <script type="module">
-        import {tentantReg, landlordReg, addUser} from "./js/main.js";
+        import {tenantReg, landlordReg, addUser} from "./js/main.js";
         window.onload = function() {
-            let tentant = document.getElementById("tentant")
-            tentant.onclick = tentantReg
+            let tenant = document.getElementById("tenant")
+            tenant.onclick = tenantReg
             let landlord = document.getElementById("landlord")
             landlord.onclick = landlordReg
             let signUp = document.getElementById("signUp")

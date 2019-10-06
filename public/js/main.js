@@ -19,17 +19,20 @@ function goToLogin() {
 function goToLandlordPage() {
     window.location.href = '/landlord/landlord.html';
 }
+function goToTenantPage() {
+    window.location.href = '/tenant/tenant.html';
+}
 
-const tentantReg = function(e){
+const tenantReg = function(e){
     e.preventDefault()
-    userType = "landlord"
+    userType = "tenant"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
 }
 
 const landlordReg = function(e){
     e.preventDefault()
-    userType = "tentant"
+    userType = "landlord"
     document.getElementById("form").style.display = ""
     document.getElementById("userType").style.display = "none"
     document.getElementById("KeyInput").style.display = "none"
@@ -44,36 +47,49 @@ const addUser = function(e){
     let phoneNum = document.getElementById("PhoneNumber").value
     let email = document.getElementById("Email").value
 
-    let user = {
-        userType: userType,
-        first: firstName,
-        last: lastName,
-        username: username,
-        password: password,
-        phone: phoneNum,
-        email: email
-    }
-
-    if(userType === "tentant") {
-        user.key = document.getElementById("Key").value
-    }
-
-    const data = JSON.stringify(user)
-    console.log(user)
-
-    fetch("/signUp", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: data
-    })
-    .then(function(response){
-        if(response.status === 200) {
-            goToLogin();
+    if(firstName === "" ||
+        lastName === "" ||
+        username === "" ||
+        password === "" ||
+        phoneNum === "" ||
+        email === ""){
+        alert("Please fill in all sections")
+    }else{
+        let user = {
+            userType: userType,
+            first: firstName,
+            last: lastName,
+            username: username,
+            password: password,
+            phone: phoneNum,
+            email: email
         }
-        else {
-            alert("Username already exists")
+
+        if(userType === "tenant") {
+            let key = document.getElementById("Key").value
+            if(key === "") {
+                alert("Landlord key invaild")
+                return
+            }
         }
-    })
+
+        const data = JSON.stringify(user)
+        console.log(user)
+
+        fetch("/signUp", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: data
+        })
+            .then(function(response){
+                if(response.status === 200) {
+                    goToLogin();
+                }
+                else {
+                    alert("Username already exists")
+                }
+            })
+    }
 }
 
 const login = function(e){
@@ -95,12 +111,18 @@ const login = function(e){
     }).then(function(response){
         if(response.status===200){
             console.log("200 Sent successfully")
-            goToLandlordPage()
         }else{
             //console.log("error")
             window.alert("Username or password not found")
         }
-
+        return response.json()
+    }).then(function(data){
+        if(data === "tenant"){
+            goToTenantPage()
+        }
+        else{
+            goToLandlordPage()
+        }
     })
 };
 
@@ -146,18 +168,4 @@ const signUpFromLogin = function(e) {
 </script>
 */
 
-window.onload = function(){
-    // let tentant = document.getElementById("tentant")
-    // tentant.onclick = tentantReg
-    // let landlord = document.getElementById("landlord")
-    // landlord.onclick = landlordReg
-    // let signUp = document.getElementById("signUp")
-    // signUp.onclick = addUser
-
-    // const loginBtn = document.getElementById('loginButton')
-    // loginBtn.onclick = login
-    // const loginSignUpBtn = document.getElementById('registerButton')
-    // loginSignUpBtn.onclick = signUpFromLogin
-}
-
-export {tentantReg, landlordReg, addUser, login, signUpFromLogin}
+export {tenantReg, landlordReg, addUser, login, signUpFromLogin}
