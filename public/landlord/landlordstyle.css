@@ -73,8 +73,87 @@ body {
   height: 25%;
 }
 
+.profileBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  font-size: 24px;
+  background-color: #7FC8EC;
+  border: none;
+  color: white;
+  padding: 20px 26px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.profileBtn:hover {
+  background-color: #66ADCF;
+}
+
+.addApartmentBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  font-size: 24px;
+  background-color: #95BF74;
+  border: none;
+  color: white;
+  padding: 20px 26px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.addApartmentBtn:hover {
+  background-color: #7DA45E;
+}
+
+.apartment-group button {
+  background-color: #79C4BD;
+}
+
+.apartment-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+.manageBtns-group {
+  position: relative;
+  text-align: right;
+}
+
+/* Add a background color on hover */
+.apartment-group button:hover {
+  background-color: #61A49E;
+}
+
+.screenTitle {
+  
+}
+
 #manageScreen {
   display: block;
+}
+
+#manageLeft {
+  height: 90%;
+  width: 40%;
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  background-color: green;
+}
+
+#apartments {
+  padding-top: 8%;
+  padding-left: 8%;
+  padding-right: 8%;
+  position: relative;
+}
+
+#manageRight {
+  height: 90%;
+  width: 45%;
+  position: fixed;
+  top: 10%;
+  left: 55%;
+  background-color: yellow;
 }
 
 #calendarScreen {
