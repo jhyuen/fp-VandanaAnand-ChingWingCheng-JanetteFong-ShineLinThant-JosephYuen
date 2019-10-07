@@ -115,7 +115,8 @@ body {
 
 .manageBtns-group {
   position: relative;
-  text-align: right;
+  float: right;
+  background-color: green;
 }
 
 /* Add a background color on hover */
@@ -124,7 +125,11 @@ body {
 }
 
 .screenTitle {
-  
+  float: left;
+  font-size: 48px;
+  color: #808080;
+  margin-top: 8px;
+  background-color: green;
 }
 
 #manageScreen {
@@ -137,7 +142,7 @@ body {
   position: fixed;
   top: 10%;
   left: 15%;
-  background-color: green;
+  background-color: white;
 }
 
 #apartments {
@@ -145,6 +150,7 @@ body {
   padding-left: 8%;
   padding-right: 8%;
   position: relative;
+  background-color: green;
 }
 
 #manageRight {
