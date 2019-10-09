@@ -11,20 +11,27 @@
 - [Joseph Yuen](https://github.com/jhyuen)
 
 ## Login Information
-- **Landlord**: 
-- **Tenant**:
+- **Landlord**: janette (username), janette1 (password)
+- **Tenant**: ccheng (username), 123 (password)
+- Or register yourself
 
-## Description
-Lorem ipsum... fun
+## Purpose
+To develop a web application that allows for landlords and tenants to communicate, and view upcoming events and payments. 
 
 ## Features
-- **Feature 1**
-- **Feature 2**
-- **Feature 3**
-- **Feature 4**
+- **Login/Register** - Passport authentication
+- **Server and database** - Express and lowdb
+- **Landlord and Tenant Views**
+- **Schedule** - Landlords can create new events to add to calendar
+- **Calendar** - Displays events related to each user
+- **Manage Apartments** - Landlords can manage keys/apartments
+- **Contact** - Tenants and view contact information
+- **Payment** - Tenants can view their bills and navigate to PayPal
 
 ## Technical Achievements
-- **Achievement 1**: Nice...
+- **Side Tabs for Multiple Views (Technical)**: We wanted the user to be able to click tabs on the side and have the main window display the necessary information, which required us to utilize tags wisely for both the landlord and tenant views.
+- **Related databases**: We had to construct multiple databases to link common features together, so we can ensure the correct data is being displayed.
 
 ### Design/Evaluation Achievements
-- **Achievement 1**: Nice...
+- **Side Tabs for Multiple Views (Design)**: The side tabs is a nice design choice because it allows us to organize everything neatly in one page and doesn't require redirecting.
+- **CSS from scratch**: We created mockups so we applied our CSS skills from scratch to achieve our desired design.
