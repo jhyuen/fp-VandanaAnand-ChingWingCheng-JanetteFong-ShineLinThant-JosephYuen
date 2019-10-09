@@ -284,6 +284,7 @@ label {
   margin-right: 8%;
   margin-bottom: 7%;
   position: relative;
+  display: none;
 }
 
 #landlordProfile {
