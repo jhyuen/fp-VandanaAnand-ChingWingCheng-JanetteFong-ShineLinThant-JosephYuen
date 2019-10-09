@@ -18,6 +18,15 @@
       "password": "janette1",
       "phone": "1",
       "email": "jlfong@wpi.edu"
+    },
+    {
+      "userType": "tenant",
+      "first": "Vandana",
+      "last": "Anand",
+      "username": "vandu",
+      "password": "123",
+      "phone": "12345",
+      "email": "hello@gmail.com"
     }
   ]
 }
