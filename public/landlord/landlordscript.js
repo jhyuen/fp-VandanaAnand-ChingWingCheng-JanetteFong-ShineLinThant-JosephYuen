@@ -1,19 +1,16 @@
 import * as manage from './mods/manage.js'
 import * as calendar from './mods/calendar.js'
 import * as schedule from './mods/schedule.js'
-import * as inbox from './mods/inbox.js'
 
 // Nav Buttons
 var managementBtn = document.getElementById("manage")
 var calendarBtn = document.getElementById("calendar")
 var scheduleBtn = document.getElementById("schedule")
-var inboxBtn = document.getElementById("inbox")
 
 // Content Screens
 var managementScreen = document.getElementById("manageScreen")
 var calendarScreen = document.getElementById("calendarScreen")
 var scheduleScreen = document.getElementById("scheduleScreen")
-var inboxScreen = document.getElementById("inboxScreen")
 
 let element = document.getElementById("my-calendar");
 let filteredEvents = document.getElementById("allFilteredEvents")
@@ -26,10 +23,7 @@ window.onload = function () {
     calendarBtn.onclick = switchToCalendar
     const scheduleBtn = document.querySelector('#schedule')
     scheduleBtn.onclick = switchToSchedule
-    const inboxBtn = document.querySelector('#inbox')
 
-    inboxBtn.onclick = switchToInbox
-    
     fetch('/currentUser', {
         method: 'GET'
     }).then(function(response) {
@@ -54,8 +48,6 @@ window.onload = function () {
     // Calendar Screen
 
     // Schedule Screen
-
-    // Inbox Screen
 }
 
 const switchToManagement = function(e) {
@@ -64,7 +56,6 @@ const switchToManagement = function(e) {
     managementScreen.style.display = 'block'
     calendarScreen.style.display = 'none'
     scheduleScreen.style.display = 'none'
-    inboxScreen.style.display = 'none'
 
     manage.refresh
             
@@ -77,7 +68,6 @@ const switchToCalendar = function(e) {
     managementScreen.style.display = 'none'
     calendarScreen.style.display = 'block'
     scheduleScreen.style.display = 'none'
-    inboxScreen.style.display = 'none'
 
     console.log("Calendar")
 }
@@ -88,18 +78,6 @@ const switchToSchedule = function(e) {
     managementScreen.style.display = 'none'
     calendarScreen.style.display = 'none'
     scheduleScreen.style.display = 'block'
-    inboxScreen.style.display = 'none'
 
     console.log("Schedule")
-}
-
-const switchToInbox = function(e) {
-    e.preventDefault()
-    
-    managementScreen.style.display = 'none'
-    calendarScreen.style.display = 'none'
-    scheduleScreen.style.display = 'none'
-    inboxScreen.style.display = 'block'
-
-    console.log("Inbox")
 }

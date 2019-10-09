@@ -133,11 +133,6 @@ app.post('/addApartment', function (request, response) {
     response.end()
   })
 })
-/*
-db.get('orders')
-  .push({ yourname: 'Joe', phone: '122-343-2334', potato: 'sweet', seasoning: 'salt', size: 'small', ordernum: 1234 })
-  .write()*/
-
 
 app.listen(process.env.PORT || port, process.env.IP, () => {
   console.log("Server is listening on port ", process.env.PORT || port, "...");

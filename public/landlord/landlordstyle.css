@@ -83,7 +83,7 @@ label {
   cursor: pointer;
   width: 100%;
   display: block;
-  height: 25%;
+  height: 33.33%;
 }
 
 .deleteApartmentBtnFun {
@@ -370,10 +370,6 @@ label {
   display: none;
 }
 
-#inboxScreen {
-  display: none;
-}
-
 #manage {
   background: #F7CD54;
 }
@@ -396,14 +392,6 @@ label {
 
 #schedule:hover {
   background: #66ADCF;
-}
-
-#inbox {
-  background: #95BF74;
-}
-
-#inbox:hover {
-  background: #7DA45E;
 }
 
 #my-calendar {
