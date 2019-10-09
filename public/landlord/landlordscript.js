@@ -4,7 +4,6 @@ import * as schedule from './mods/schedule.js'
 import * as inbox from './mods/inbox.js'
 
 manage.hello()
-calendar.hello()
 schedule.hello()
 inbox.hello()
 
@@ -19,6 +18,11 @@ var managementScreen = document.getElementById("manageScreen")
 var calendarScreen = document.getElementById("calendarScreen")
 var scheduleScreen = document.getElementById("scheduleScreen")
 var inboxScreen = document.getElementById("inboxScreen")
+
+let element = document.getElementById("my-calendar");
+let filteredEvents = document.getElementById("allFilteredEvents")
+calendar.calendar(element, filteredEvents)
+
 
 window.onload = function () {
     const managementBtn = document.querySelector('#manage')
@@ -74,5 +78,4 @@ const switchToInbox = function(e) {
 
     console.log("Inbox")
 }
-
 
