@@ -95,5 +95,95 @@
       "serviceid": "Testtest"
     }
   ],
+  "events": [
+    {
+      "eventname": "BBQ",
+      "day": "2019-10-23",
+      "desc": "Veggis can die",
+      "apt": "56 Fluffy St",
+      "eventid": "BBQ56 Fluffy St"
+    },
+    {
+      "eventname": "",
+      "day": "",
+      "desc": "",
+      "apt": "",
+      "eventid": ""
+    },
+    {
+      "eventname": "test",
+      "day": "2019-10-16",
+      "desc": "test",
+      "apt": "test",
+      "eventid": "testtest"
+    }
+  ],
+  "payments": [
+    {
+      "amount": "20",
+      "due": "2019-10-17",
+      "desc": "Rent",
+      "apt": "56 Dover st",
+      "paymentid": "Rent56 Dover st"
+    },
+    {
+      "amount": "500",
+      "due": "2019-10-13",
+      "desc": "Fridge",
+      "apt": "44 Dover St",
+      "paymentid": "Fridge44 Dover St"
+    },
+    {
+      "amount": "$9,000.00",
+      "due": "2020-01-10",
+      "desc": "New House",
+      "apt": "33 Dover St",
+      "paymentid": "New House33 Dover St"
+    },
+    {
+      "amount": "",
+      "due": "",
+      "desc": "",
+      "apt": "",
+      "paymentid": ""
+    },
+    {
+      "amount": "$0.00",
+      "due": "2019-10-02",
+      "desc": "test",
+      "apt": "test",
+      "paymentid": "testtest"
+    }
+  ],
+  "services": [
+    {
+      "service": "Shower Repair",
+      "date": "2019-10-15",
+      "desc": "No water",
+      "apt": "56",
+      "serviceid": "Shower Repair56"
+    },
+    {
+      "service": "Drain",
+      "date": "2019-10-07",
+      "desc": "no hole",
+      "apt": "56 Dover St",
+      "serviceid": "Drain56 Dover St"
+    },
+    {
+      "service": "Deomlish",
+      "date": "2019-10-16",
+      "desc": "Time to go..",
+      "apt": "55 Dover",
+      "serviceid": "Deomlish55 Dover"
+    },
+    {
+      "service": "Test",
+      "date": "2019-10-14",
+      "desc": "test",
+      "apt": "test",
+      "serviceid": "Testtest"
+    }
+  ],
   "keycount": 9
 }

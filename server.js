@@ -86,8 +86,53 @@ app.post("/signUp", (req, res) => {
     res.writeHead(200, "OK", { 'Content-Type': 'text/plain' })
     res.end()
   }
-  else {
-    res.writeHead(422, "user Exist", { 'Content-Type': 'text/plain' })
+  else{
+    res.writeHead( 422, "User Exists", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+})
+
+app.post("/addEvent", (req, res) => {
+  let event = db.get("events").filter({ eventid: req.body.eventid})
+  console.log(event.value().length)
+  if(event.value().length === 0){
+    db.get('events').push(req.body).write()
+
+    res.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+  else{
+    res.writeHead( 422, "Event Exists", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+})
+
+app.post("/addPayment", (req, res) => {
+  let payment = db.get("payments").filter({ paymentid: req.body.paymentid})
+  console.log(payment.value().length)
+  if(payment.value().length === 0){
+    db.get('payments').push(req.body).write()
+
+    res.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+  else{
+    res.writeHead( 422, "Payment Exists", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+})
+
+app.post("/addService", (req, res) => {
+  let service = db.get("services").filter({ serviceid: req.body.serviceid})
+  console.log(service.value().length)
+  if(service.value().length === 0){
+    db.get('services').push(req.body).write()
+
+    res.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
+    res.end()
+  }
+  else{
+    res.writeHead( 422, "Service Exists", {'Content-Type': 'text/plain' })
     res.end()
   }
 })
