@@ -16,7 +16,7 @@
 
 <body>
   <div class="nav-top">
-    <h1 class="welcome">Welcome firstName lastName</h1>
+    <h1 class="welcome">Welcome</h1>
     <button class="logoutBtn"><i class="fa fa-sign-out"></i></button>
   </div>
 
@@ -64,24 +64,26 @@
         </div>
 
         <div id="landlordProfile">
-          <div class="manageRightTitle">FirstName LastName</div>
+          <div class="manageRightTitle" id="profileName"></div></br></br></br></br></br></br>
           <div class="user">
-            <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
-            <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            <i class="fa fa-phone"></i>&nbsp;&nbsp;
+            <b id="userPhone"></b><br><br>
+            <i class="fa fa-envelope"></i>&nbsp;&nbsp;
+            <c id="userEmail"></c>
           </div>
-          <div class="subTitle">Edit Information</div>
+          <div class="subTitle">Edit Information</div>  
           <div id="form">
             <label for="FirstName">First Name</label>
-            <input id="FirstName" type="text" placeholder="Whatever is the actual">
+            <input id="FirstName" type="text">
 
             <label for="LastName">Last Name</label>
-            <input id="LastName" type="text" placeholder="Whatever is the actual">
+            <input id="LastName" type="text">
 
             <label for="PhoneNumber">Phone Number</label>
-            <input id="PhoneNumber" type="text" placeholder="Whatever is the actual">
+            <input id="PhoneNumber" type="text">
 
             <label for="Email">Email</label>
-            <input id="Email" type="text" placeholder="Whatever is the actual">
+            <input id="Email" type="text">
           </div>
           <button class="updateBtnFun">Update</button>
         </div>

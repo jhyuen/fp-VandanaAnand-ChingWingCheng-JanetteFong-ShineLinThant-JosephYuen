@@ -5,17 +5,57 @@ var landlordProfileScreen = document.getElementById("landlordProfile");
 var addApartmentScreen = document.getElementById("addApartment")
 var apartmentInfoScreen = document.getElementById("apartmentInfo")
 
-// when you press the management button
-const refresh = function (e) {
-  e.preventDefault()
+// Landlord Profile
+var landlordName = document.getElementById("profileName")
+var userinfoPhone = document.getElementById("userPhone")
+var userinfoEmail = document.getElementById('userEmail')
 
-  // start on profile
-  loadProfile
 
-  // load apartments
-  console.log("loading apartments")
+var firstNameForm = document.getElementById("FirstName")
+var lastNameForm = document.getElementById("LastName")
+var phoneNumberForm = document.getElementById("PhoneNumber")
+var emailForm = document.getElementById("Email")
+
+var updateProfileBtn = document.getElementsByClassName("updateBtnFun")
+
+// Add Apartment
+var apartmentAddressForm = document.getElementById("Address")
+var addApartmentBtn = document.getElementsByClassName("addApartmentBtnFun")
+
+// Apartment Info
+
+// reset fields and refresh page
+const reset = function () {
+
+  // reset 
+  fetch('/currentUser', {
+    method: 'GET'
+  }).then(function (response) {
+    return response.json()
+  }).then(function (data) {
+    var firstName = data.first
+    var lastName = data.last
+    var phone = data.phone
+    var email = data.email
+
+    landlordName.innerText = firstName + " " + lastName
+    userinfoPhone.innerText = phone
+    userinfoEmail.innerText = email
+
+
+    firstNameForm.placeholder = firstName
+    lastNameForm.placeholder = lastName
+    phoneNumberForm.placeholder = phone
+    emailForm.placeholder = email
+
+    // load apartments
+    console.log("loading apartments")
+
+  })
+
 }
 
+// Load Right Screens 
 const loadProfile = function (e) {
   e.preventDefault()
 
@@ -47,6 +87,7 @@ const loadApartment = function (e) {
   console.log("loading Apartment")
 }
 
+// Add Apartment Screen
 const addApartment = function (e) {
   e.preventDefault()
 
@@ -88,6 +129,7 @@ const addApartment = function (e) {
 
 }
 
+// Landlord Profile Screen
 const updateProfile = function (e) {
   e.preventDefault()
 
@@ -95,4 +137,4 @@ const updateProfile = function (e) {
 }
 
 // Export functions and const
-export { refresh, loadProfile, loadAddApartment, loadApartment, addApartment, updateProfile }
+export { reset, loadProfile, loadAddApartment, loadApartment, addApartment, updateProfile }

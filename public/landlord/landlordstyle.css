@@ -59,6 +59,7 @@ label {
   margin: 0px;
   padding: 0px;
   position: fixed;
+
   top: 10%;
   left: 0px;
 }
@@ -73,7 +74,6 @@ label {
 }
 
 .nav-btn-group .button {
-  /*background-color: #4CAF50; !* Green *!*/
   border: none;
   color: white;
   padding: 10px;

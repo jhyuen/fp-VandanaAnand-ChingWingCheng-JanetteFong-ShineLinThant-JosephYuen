@@ -33,10 +33,11 @@ window.onload = function () {
         console.log(data.first)
         console.log(data.last)
         const welcomeTxt = document.querySelector('.welcome')
-        welcomeTxt.innerHTML = "Welcome " + data.first + " " + data.last
+        welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
     })
 
     // Manage Screen
+    manage.reset()          
     const profileScreenBtn = document.querySelector(".profileBtn")
     profileScreenBtn.onclick = manage.loadProfile
     const addApartmentScreenBtn = document.querySelector(".addApartmentBtn")
@@ -58,7 +59,7 @@ const switchToManagement = function(e) {
     calendarScreen.style.display = 'none'
     scheduleScreen.style.display = 'none'
 
-    manage.refresh
+    manage.reset()
             
     console.log("Manage")
 }
