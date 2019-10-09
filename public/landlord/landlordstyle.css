@@ -73,6 +73,28 @@ body {
   height: 25%;
 }
 
+.deleteApartmentBtnFun {
+  margin-top: 30px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: white;
+  border: 4px solid #F2655A;
+  border-radius: 2px;
+  color: #F2655A;
+  padding: 12px;
+  width: 250px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.deleteApartmentBtnFun:hover {
+  cursor: pointer;
+  background-color: #F2655A;
+  color: white;
+}
+
 .profileBtn {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.3s;
@@ -105,23 +127,9 @@ body {
   background-color: #7DA45E;
 }
 
-.apartment-group button {
-  background-color: #79C4BD;
-}
-
-.apartment-group button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
-}
-
 .manageBtns-group {
   position: relative;
   float: right;
-  background-color: green;
-}
-
-/* Add a background color on hover */
-.apartment-group button:hover {
-  background-color: #61A49E;
 }
 
 .screenTitle {
@@ -129,37 +137,145 @@ body {
   font-size: 48px;
   color: #808080;
   margin-top: 8px;
-  background-color: green;
+  font-weight: bold;
+}
+
+.manageRightTitle {
+  text-align: left;
+  float: left;
+  font-size: 48px;
+  color: #808080;
+  margin-top: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.keyTitle {
+  text-align: left;
+  font-size: 36px;
+  color: #808080;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.subTitle {
+  text-align: left;
+  font-size: 36px;
+  color: #808080;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.tenants-group {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  color: #808080;
+}
+
+.tenant {
+  display: relative;
+  margin-top: 35px;
+}
+
+.tenant a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tenant b {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.tenant c {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.apartment-group {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.apartment-group button {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  border: none;
+  background-color: #79C4BD; 
+  color: white; 
+  padding: 18px 24px; 
+  margin-bottom: 5px;
+  cursor: pointer; 
+  width: 100%; 
+  text-align: left;
+  font-size: 36px;
+}
+
+/* Add a background color on hover */
+.apartment-group button:hover {
+  background-color: #61A49E;
+}
+
+#manageLeft {
+  height: 90%;
+  width: 45%;
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+#apartments {
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 7%;
+  position: relative;
 }
 
 #manageScreen {
   display: block;
 }
 
-#manageLeft {
-  height: 90%;
-  width: 40%;
-  position: fixed;
-  top: 10%;
-  left: 15%;
-  background-color: white;
+#addApartment {
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 7%;
+  position: relative;
 }
 
-#apartments {
-  padding-top: 8%;
-  padding-left: 8%;
-  padding-right: 8%;
+#landlordProfile {
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 7%;
   position: relative;
-  background-color: green;
+}
+
+#apartmentInfo {
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 7%;
+  position: relative;
 }
 
 #manageRight {
   height: 90%;
-  width: 45%;
+  width: 40%;
   position: fixed;
   top: 10%;
-  left: 55%;
-  background-color: yellow;
+  left: 60%;
+  background-color: #F9F9F9;
+  overflow-y: scroll;
+  overflow-x: auto;
+  display: block;
 }
 
 #calendarScreen {

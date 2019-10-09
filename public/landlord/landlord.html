@@ -7,8 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="landlordstyle.css" />
-  <script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js"
+    integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css"
+    integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,16 +31,74 @@
     <div id="manageScreen">
       <div id="manageLeft">
         <div id="apartments">
-          <h3 class="screenTitle">Manage</h3>
+          <div class="screenTitle">Manage</div>
           <div class="manageBtns-group">
             <button class="profileBtn"><i class="fa fa-user"></i></button>
             <button class="addApartmentBtn"><i class="fa fa-plus"></i></button>
+          </div>
+
+          <div class="apartment-group">
+            <button>Apartment 1</button>
+            <button>Apartment 2</button>
+            <button>Apartment 3</button>
+            <button>Apartment 4</button>
+            <button>Apartment 5</button>
+            <button>Apartment 6</button>
+            <button>Apartment 2</button>
+            <button>Apartment 3</button>
+            <button>Apartment 4</button>
+            <button>Apartment 5</button>
+            <button>Apartment 6</button>
           </div>
         </div>
       </div>
 
       <div id="manageRight">
-        
+        <div id="addApartment">
+          <div class="manageRightTitle">Apartment Name</div></br></br></br></br>
+          <div class="keyTitle" id="landlordkey">Key: ABCDE</div>
+          <div class="subTitle">Roommates</div>
+          <div class="tenants-group">
+            <div class="tenant">
+              <a>FirstName LastName</a><br><br>
+              <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+              <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            </div>
+
+            <div class="tenant">
+              <a>FirstName LastName</a><br><br>
+              <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+              <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            </div>
+
+            <div class="tenant">
+              <a>FirstName LastName</a><br><br>
+              <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+              <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            </div>
+
+            <div class="tenant">
+              <a>FirstName LastName</a><br><br>
+              <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+              <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            </div>
+
+            <div class="tenant">
+              <a>FirstName LastName</a><br><br>
+              <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+              <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            </div>
+
+            <button class="deleteApartmentBtnFun">Delete Apartment</button>
+          </div>
+        </div>
+
+
+        <div id="apartmentInfo">
+
+        </div>
+
+
       </div>
 
 
@@ -59,14 +120,14 @@
           monthFormat: "month YYYY"
         });
 
-        myCalendar.onDateClick(function(event, date){
+        myCalendar.onDateClick(function (event, date) {
           //selecting a day
           myCalendar.clearSelected();
           myCalendar.select(date);
 
-          myCalendar.onDateRender(function(date, element, info){
+          myCalendar.onDateRender(function (date, element, info) {
             //if theres event on date
-              //change color of date and/or bold
+            //change color of date and/or bold
           });
 
           console.log(date.toString().substring(4, 15));
