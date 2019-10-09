@@ -23,7 +23,6 @@ let element = document.getElementById("my-calendar");
 let filteredEvents = document.getElementById("allFilteredEvents")
 calendar.calendar(element, filteredEvents)
 
-
 window.onload = function () {
     const managementBtn = document.querySelector('#manage')
     managementBtn.onclick = switchToManagement
@@ -33,6 +32,17 @@ window.onload = function () {
     scheduleBtn.onclick = switchToSchedule
     const inboxBtn = document.querySelector('#inbox')
     inboxBtn.onclick = switchToInbox
+    fetch('/currentUser', {
+        method: 'GET'
+    }).then(function(response) {
+        return response.json()
+    }).then(function(data) {
+        console.log("data", data)
+        console.log(data.first)
+        console.log(data.last)
+        document.getElementById('landlord-welcome').innerHTML = '<h1 id="landlord-welcome" class="welcome">Welcome ' + data.first + ' ' + data.last + '</h1>'
+    })
+
 }
 
 const switchToManagement = function(e) {

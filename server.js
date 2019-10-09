@@ -1,4 +1,5 @@
 const express = require('express'),
+      session = require('express-session'),
       app = express(),
       bodyParser = require('body-parser'),
       helmet = require('helmet'),
@@ -8,6 +9,8 @@ const express = require('express'),
       passport  = require( 'passport' ),
       Local     = require( 'passport-local' ).Strategy,
       port = 3000;
+
+let credentials = null
 
 // automatically deliver all files in the public folder
 // with the correct headers / MIME type.
@@ -25,6 +28,7 @@ const myLocalStrategy = function( username, password, done ) {
     return done( null, false, { message:'user not found' })
   }
   else if( user.password === password ) {
+    credentials = username
     return done( null, { username, password })
   }
   else{
@@ -39,8 +43,8 @@ passport.initialize()
 passport.serializeUser( ( user, done ) => done( null, user.username ) )
 
 passport.deserializeUser( ( username, done ) => {
-  const user = users.find( u => u.username === username )
-  console.log( 'deserializing:', name )
+  const user = db.get('users').find( u => u.username === username )
+  console.log( 'deserializing:', username )
 
   if( user !== undefined ) {
     done( null, user )
@@ -49,9 +53,18 @@ passport.deserializeUser( ( username, done ) => {
   }
 })
 
+app.use( session({ secret:'cats cats cats', resave:false, saveUninitialized:false }) )
 app.use( passport.initialize() )
 app.use( passport.session() )
 
+app.post('/test', function( req, res ) {
+  console.log( 'authenticate with cookie?', req.user )
+  res.json({ status:'success' })
+})
+
+app.get('/currentUser', function(req, res) {
+  res.send(JSON.stringify(db.get('users').find({username: credentials}).value()))
+})
 
 // domain views index.html
 app.get('/', function (request, response) {

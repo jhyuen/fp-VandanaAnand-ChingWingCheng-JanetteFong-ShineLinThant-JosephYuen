@@ -117,6 +117,7 @@ const login = function(e){
         }
         return response.json()
     }).then(function(data){
+
         if(data === "tenant"){
             goToTenantPage()
         }
