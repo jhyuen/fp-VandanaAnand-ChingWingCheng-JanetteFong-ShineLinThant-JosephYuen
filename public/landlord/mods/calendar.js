@@ -11,8 +11,15 @@ function calendar(element, filteredEvents) {
         myCalendar.clearSelected();
         myCalendar.select(date);
 
-        //filteredEvents.innerHTML = '<p>Payment</p>' + getPayment() + '<p>Event</p>' + getEvent() + '<p>Service</p>' + getService()
-        filteredEvents.innerHTML = '<p>Payment</p>' + toHTML(["hi", "hello", "yo"])
+        //filteredEvents.innerHTML = "<p id='date'</p>" + date.toString().substring(4, 15) +
+        // '<p id="pay" class="eventType">Payment</p>' + getPayment() +
+        // '<p id="event" class="eventType">Event</p>' + getEvent() +
+        // '<p id="service" class="eventType">Service</p>' + getService()
+        filteredEvents.innerHTML = "<p id='date'</p>" + date.toString().substring(4, 15) +
+            '<p id="pay" class="eventType">Payment</p>' + toHTML(["hi", "hello", "yo"]) +
+            '<p id="event" class="eventType">Event</p>' + toHTML(["hi", "hello", "yo"]) +
+            '<p id="service" class="eventType">Service</p>' + toHTML(["hi", "hello", "yo"])
+
         console.log(date.toString().substring(4, 15));
     });
 
