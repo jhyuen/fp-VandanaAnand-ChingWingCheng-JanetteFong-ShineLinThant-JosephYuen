@@ -33,6 +33,10 @@ const reset = function () {
   }).then(function (response) {
     return response.json()
   }).then(function (data) {
+    
+    const welcomeTxt = document.querySelector('.welcome')
+    welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
+    
     var firstName = data.first
     var lastName = data.last
     var phone = data.phone
@@ -42,6 +46,10 @@ const reset = function () {
     userinfoPhone.innerText = phone
     userinfoEmail.innerText = email
 
+    firstNameForm.value = firstName
+    lastNameForm.value = lastName
+    phoneNumberForm.value = phone
+    emailForm.value = email
 
     firstNameForm.placeholder = firstName
     lastNameForm.placeholder = lastName
@@ -133,7 +141,37 @@ const addApartment = function (e) {
 const updateProfile = function (e) {
   e.preventDefault()
 
-  console.log("updating profile")
+  fetch('/currentUser', {
+    method: 'GET'
+  }).then(function (response) {
+    return response.json()
+  }).then(function (data) {
+
+    const firstNameForm = document.querySelector('#FirstName'),
+      lastNameForm = document.querySelector('#LastName'),
+      phoneNumberForm = document.querySelector('#PhoneNumber'),
+      emailForm = document.querySelector('#Email')
+
+    const json = { firstName: firstNameForm.value, lastName: lastNameForm.value, phone: phoneNumberForm.value, email: emailForm.value, username: data.username },
+      body = JSON.stringify(json)
+
+    // order sent to server
+    fetch('/updateProfile', {
+      method: 'POST',
+      body
+    })
+
+      .then(function (response) {
+        console.log(response)
+
+        // load data into queue table
+        reset()
+        console.log("updating profile")
+
+        return false;
+        
+      })
+  })
 }
 
 // Export functions and const

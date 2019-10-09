@@ -12,12 +12,12 @@
     },
     {
       "userType": "landlord",
-      "first": "Janette",
-      "last": "Fong",
+      "first": "Joe",
+      "last": "Yuen",
       "username": "janette",
       "password": "janette1",
-      "phone": "1",
-      "email": "jlfong@wpi.edu"
+      "phone": "512-576-6716",
+      "email": "jhyuen@wpi.edu"
     },
     {
       "userType": "tenant",

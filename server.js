@@ -134,6 +134,33 @@ app.post('/addApartment', function (request, response) {
   })
 })
 
+// POST update profile
+app.post( '/updateProfile', function( request, response ) {
+  dataString = ''
+  
+  request.on( 'data', function( data ) {
+    dataString += data
+  })
+
+  request.on( 'end', function() {
+
+    var updatedata = JSON.parse(dataString)
+    var firstName = (updatedata.firstName)
+    var lastName = (updatedata.lastName)
+    var phone = (updatedata.phone)
+    var email = (updatedata.email)
+    var username = (updatedata.username)
+
+    db.get('users')
+      .find({username: username})
+      .assign({ first: firstName, last: lastName, phone: phone, email: email}) 
+      .write()
+
+    response.writeHead( 200, "OK", {'Content-Type': 'application/json' })
+    response.end()
+  })
+})
+
 app.listen(process.env.PORT || port, process.env.IP, () => {
   console.log("Server is listening on port ", process.env.PORT || port, "...");
 });

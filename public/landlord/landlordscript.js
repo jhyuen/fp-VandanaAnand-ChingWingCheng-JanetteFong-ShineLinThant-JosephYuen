@@ -24,18 +24,6 @@ window.onload = function () {
     const scheduleBtn = document.querySelector('#schedule')
     scheduleBtn.onclick = switchToSchedule
 
-    fetch('/currentUser', {
-        method: 'GET'
-    }).then(function(response) {
-        return response.json()
-    }).then(function(data) {
-        console.log("data", data)
-        console.log(data.first)
-        console.log(data.last)
-        const welcomeTxt = document.querySelector('.welcome')
-        welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
-    })
-
     // Manage Screen
     manage.reset()          
     const profileScreenBtn = document.querySelector(".profileBtn")
