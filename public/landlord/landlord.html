@@ -137,32 +137,9 @@
       <div class="container">
         <div id="my-calendar" class="material-theme red"></div>
         <div id="events">
-          <h3>Events</h3>
+          <div id="allFilteredEvents"></div>
         </div>
       </div>
-
-      <script type="text/javascript">
-
-        var element = document.getElementById("my-calendar");
-        var myCalendar = jsCalendar.new({
-          target: element,
-          monthFormat: "month YYYY"
-        });
-
-        myCalendar.onDateClick(function (event, date) {
-          //selecting a day
-          myCalendar.clearSelected();
-          myCalendar.select(date);
-
-          myCalendar.onDateRender(function (date, element, info) {
-            //if theres event on date
-            //change color of date and/or bold
-          });
-
-          console.log(date.toString().substring(4, 15));
-        });
-
-      </script>
 
 
     </div>
