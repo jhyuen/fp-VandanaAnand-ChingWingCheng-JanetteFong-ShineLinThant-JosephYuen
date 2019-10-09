@@ -28,5 +28,13 @@
       "phone": "12345",
       "email": "hello@gmail.com"
     }
-  ]
+  ],
+  "apartments": [
+    {
+      "address": "hjhk",
+      "key": 8,
+      "landlord": "janette"
+    }
+  ],
+  "keycount": 9
 }

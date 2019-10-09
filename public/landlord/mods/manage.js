@@ -39,7 +39,7 @@ const loadAddApartment = function (e) {
 
 const loadApartment = function (e) {
   e.preventDefault()
-  
+
   landlordProfileScreen.style.display = "none"
   addApartmentScreen.style.display = "none"
   apartmentInfoScreen.style.display = "block"
@@ -50,7 +50,42 @@ const loadApartment = function (e) {
 const addApartment = function (e) {
   e.preventDefault()
 
-  console.log("adding apartment")
+  var username;
+
+  fetch('/currentUser', {
+    method: 'GET'
+  }).then(function (response) {
+    return response.json()
+  }).then(function (data) {
+    username = data.username;
+
+    const address = document.querySelector('#Address'),
+      landlord = username;
+
+    const json = { address: address.value, landlord: landlord },
+      body = JSON.stringify(json)
+
+    // order sent to server
+    fetch('/addApartment', {
+      method: 'POST',
+      body
+    })
+
+      .then(function (response) {
+        console.log(response)
+
+        // load data into queue table
+        //refreshTable();
+      })
+
+    console.log("adding apartment")
+
+    // resetForm()
+
+    return false
+  })
+
+
 }
 
 const updateProfile = function (e) {

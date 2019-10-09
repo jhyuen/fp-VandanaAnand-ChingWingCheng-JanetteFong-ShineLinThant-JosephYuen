@@ -29,6 +29,7 @@ window.onload = function () {
     const inboxBtn = document.querySelector('#inbox')
 
     inboxBtn.onclick = switchToInbox
+    
     fetch('/currentUser', {
         method: 'GET'
     }).then(function(response) {
