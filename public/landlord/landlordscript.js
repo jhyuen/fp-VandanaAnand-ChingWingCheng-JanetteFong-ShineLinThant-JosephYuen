@@ -32,7 +32,8 @@ window.onload = function () {
         console.log("data", data)
         console.log(data.first)
         console.log(data.last)
-        document.getElementById('landlord-welcome').innerHTML = '<h1 id="landlord-welcome" class="welcome">Welcome ' + data.first + ' ' + data.last + '</h1>'
+        const welcomeTxt = document.querySelector('.welcome')
+        welcomeTxt.innerHTML = "Welcome " + data.first + " " + data.last
     })
 
     // Manage Screen
