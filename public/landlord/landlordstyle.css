@@ -4,6 +4,19 @@ body {
   color: black;
 }
 
+input {
+  width: 250px;
+  height: 25px;
+  margin: 5px;
+  padding: 5px;
+}
+
+label {
+  font-size: 15pt;
+  width: 264px;
+  margin: 5px;
+}
+
 .welcome {
   float: left;
   font-size: 30px;
@@ -111,6 +124,28 @@ body {
   background-color: #66ADCF;
 }
 
+.addApartmentBtnFun {
+  margin-top: 30px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: white;
+  border: 4px solid #95BF74;
+  border-radius: 2px;
+  color: #95BF74;
+  padding: 12px;
+  width: 250px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.addApartmentBtnFun:hover {
+  cursor: pointer;
+  background-color: #95BF74;
+  color: white;
+}
+
 .addApartmentBtn {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.3s;
@@ -204,17 +239,18 @@ body {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.3s;
   border: none;
-  background-color: #79C4BD; 
-  color: white; 
-  padding: 18px 24px; 
+  background-color: #79C4BD;
+  color: white;
+  padding: 18px 24px;
   margin-bottom: 5px;
-  cursor: pointer; 
-  width: 100%; 
+  cursor: pointer;
+  width: 100%;
   text-align: left;
   font-size: 36px;
 }
 
 /* Add a background color on hover */
+
 .apartment-group button:hover {
   background-color: #61A49E;
 }
@@ -264,6 +300,7 @@ body {
   margin-right: 8%;
   margin-bottom: 7%;
   position: relative;
+  display: none;
 }
 
 #manageRight {
@@ -276,6 +313,13 @@ body {
   overflow-y: scroll;
   overflow-x: auto;
   display: block;
+}
+
+#form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  color: #808080;
 }
 
 #calendarScreen {
@@ -333,9 +377,11 @@ body {
   width: 50%;
   zoom: 215%;
 }
+
 #events {
   width: 50%;
 }
+
 .container {
   display: flex;
   width: 100%;
