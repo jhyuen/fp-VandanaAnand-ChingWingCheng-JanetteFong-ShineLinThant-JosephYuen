@@ -25,8 +25,7 @@ Your project should consist of a complete Web application, exhibiting facets of 
 - Static Web page content and design. You should have a project that is accessible, easily navigable, and features significant content. ✔
 - Dynamic behavior implemented with JavaScript. ✔
 - Server-side programming *using Node.js*. Typically this will take the form of some sort of persistent data, authentication, and possibly server-side computation. ✔
-
-Additionally, you should incorporate features that you independently research, design, and implement for your project. ✔
+- Incorporate features that you independently research, design, and implement for your project. ✔
 
 ## Features
 - **Login/Register** - Passport authentication
