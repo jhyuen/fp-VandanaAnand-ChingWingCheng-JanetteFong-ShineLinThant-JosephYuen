@@ -3,11 +3,6 @@ import * as calendar from './mods/calendar.js'
 import * as schedule from './mods/schedule.js'
 import * as inbox from './mods/inbox.js'
 
-manage.hello()
-calendar.hello()
-schedule.hello()
-inbox.hello()
-
 // Nav Buttons
 var managementBtn = document.getElementById("manage")
 var calendarBtn = document.getElementById("calendar")
@@ -29,6 +24,22 @@ window.onload = function () {
     scheduleBtn.onclick = switchToSchedule
     const inboxBtn = document.querySelector('#inbox')
     inboxBtn.onclick = switchToInbox
+
+    // Manage Screen
+    const profileScreenBtn = document.querySelector(".profileBtn")
+    profileScreenBtn.onclick = manage.loadProfile
+    const addApartmentScreenBtn = document.querySelector(".addApartmentBtn")
+    addApartmentScreenBtn.onclick = manage.loadAddApartment
+    const updateProfileBtn = document.querySelector(".updateBtnFun")
+    updateProfileBtn.onclick = manage.updateProfile
+    const addApartmentBtn = document.querySelector(".addApartmentBtnFun")
+    addApartmentBtn.onclick = manage.addApartment
+
+    // Calendar Screen
+
+    // Schedule Screen
+
+    // Inbox Screen
 }
 
 const switchToManagement = function(e) {
@@ -39,6 +50,7 @@ const switchToManagement = function(e) {
     scheduleScreen.style.display = 'none'
     inboxScreen.style.display = 'none'
 
+    manage.refresh
     console.log("Manage")
 }
 
@@ -74,5 +86,3 @@ const switchToInbox = function(e) {
 
     console.log("Inbox")
 }
-
-
