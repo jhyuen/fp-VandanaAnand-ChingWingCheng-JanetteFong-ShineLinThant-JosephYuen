@@ -33,10 +33,10 @@ const reset = function () {
   }).then(function (response) {
     return response.json()
   }).then(function (data) {
-    
+
     const welcomeTxt = document.querySelector('.welcome')
     welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
-    
+
     var firstName = data.first
     var lastName = data.last
     var phone = data.phone
@@ -56,7 +56,11 @@ const reset = function () {
     phoneNumberForm.placeholder = phone
     emailForm.placeholder = email
 
+    apartmentAddressForm.value = ""
+    apartmentAddressForm.placeholder = "100 Institute Road"
+
     // load apartments
+
     console.log("loading apartments")
 
   })
@@ -123,15 +127,10 @@ const addApartment = function (e) {
       .then(function (response) {
         console.log(response)
 
-        // load data into queue table
-        //refreshTable();
+        reset()
+        console.log("adding apartment")
+        return false
       })
-
-    console.log("adding apartment")
-
-    // resetForm()
-
-    return false
   })
 
 
@@ -169,7 +168,7 @@ const updateProfile = function (e) {
         console.log("updating profile")
 
         return false;
-        
+
       })
   })
 }

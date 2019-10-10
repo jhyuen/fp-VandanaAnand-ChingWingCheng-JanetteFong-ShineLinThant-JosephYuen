@@ -35,6 +35,9 @@ window.onload = function () {
     const addApartmentBtn = document.querySelector(".addApartmentBtnFun")
     addApartmentBtn.onclick = manage.addApartment
 
+    const testBtn = document.querySelector("#testbtn")
+    testBtn.onclick = manage.loadApartment
+
     // Calendar Screen
 
     // Schedule Screen

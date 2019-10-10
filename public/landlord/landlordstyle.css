@@ -248,6 +248,8 @@ label {
 
 .tenant {
   display: inline-block;
+  margin-top: 35px; 
+  width: 100%;
 }
 
 .tenant a {

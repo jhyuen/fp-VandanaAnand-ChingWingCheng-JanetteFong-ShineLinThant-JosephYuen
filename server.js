@@ -66,6 +66,14 @@ app.get('/currentUser', function (req, res) {
   res.send(JSON.stringify(db.get('users').find({ username: credentials }).value()))
 })
 
+app.get('/getAdmin', function (req, res) {
+  
+  const user = db.get('users').find({username: credentials}).value()
+  const apartment = db.get('apartments').find({key: user.key}).value()
+  
+  res.send(JSON.stringify(db.get('users').find({ username: apartment.landlord }).value()))
+}) 
+
 // domain views index.html
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
@@ -160,6 +168,7 @@ app.post( '/updateProfile', function( request, response ) {
     response.end()
   })
 })
+
 
 app.listen(process.env.PORT || port, process.env.IP, () => {
   console.log("Server is listening on port ", process.env.PORT || port, "...");

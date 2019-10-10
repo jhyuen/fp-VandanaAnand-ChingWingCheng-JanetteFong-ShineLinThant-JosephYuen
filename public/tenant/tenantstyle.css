@@ -4,6 +4,19 @@ body {
   color: black;
 }
 
+input {
+  width: 250px;
+  height: 25px;
+  margin: 5px;
+  padding: 5px;
+}
+
+label {
+  font-size: 15pt;
+  width: 264px;
+  margin: 5px;
+}
+  
 .welcome {
   float: left;
   font-size: 30px;
@@ -59,6 +72,69 @@ body {
   background-color: white;
 }
 
+#tenantProfile {
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 7%;
+  position: relative;
+}
+
+.landlordInfo {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  color: #808080;
+}
+
+.tenants-group {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  color: #808080;
+}
+
+.landlord {
+  margin-top: 35px;
+  display: inline-block;
+}
+
+.landlord a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.landlord b {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.landlord c {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.tenant {
+  margin-top: 35px;
+  width: 100%;
+  display: inline-block;
+}
+
+.tenant a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tenant b {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.tenant c {
+  font-size: 18px;
+  font-weight: normal;
+}
+
 .nav-btn-group .button {
   /*background-color: #4CAF50; !* Green *!*/
   border: none;
@@ -73,15 +149,105 @@ body {
   height: 33.33%;
 }
 
+.contactRightTitle {
+  text-align: left;
+  float: left;
+  font-size: 48px;
+  color: #808080;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.user {
+  display: inline-block;
+  color: #808080;
+}
+
+.user b {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.user c {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+#apartments {
+  margin-top: 8%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 7%;
+  position: relative;
+}
+
+.subTitle {
+  text-align: left;
+  font-size: 36px;
+  color: #808080;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+#contactLeft {
+  height: 90%;
+  width: 40%;
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+#contactRight {
+  height: 90%;
+  width: 45%;
+  position: fixed;
+  top: 10%;
+  left: 55%;
+  background-color: #F9F9F9;
+  overflow-y: scroll;
+  overflow-x: auto;
+  display: block;
+}
+
+#form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #808080;
+}
+
+.screenTitle {
+  text-align: left;
+  font-size: 48px;
+  color: #808080;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.updateBtnFun {
+  margin-top: 30px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: white;
+  border: 4px solid #808080;
+  border-radius: 2px;
+  color: #808080;
+  padding: 12px;
+  width: 250px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
 #contactScreen {
   display: block;
 }
 
 #calendarScreen {
-  display: none;
-}
-
-#inquiryScreen {
   display: none;
 }
 
@@ -103,14 +269,6 @@ body {
 
 #calendar:hover {
   background: #D24B3F
-}
-
-#inquiry {
-  background: #7FC8EC;
-}
-
-#inquiry:hover {
-  background: #66ADCF;
 }
 
 #payment {

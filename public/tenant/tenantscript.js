@@ -2,10 +2,6 @@ import * as contact from './mods/contact.js'
 import * as calendar from './mods/calendar.js'
 import * as payment from './mods/payment.js'
 
-contact.hello()
-calendar.hello()
-payment.hello()
-
 // Nav Buttons
 var contactBtn = document.getElementById("contact")
 var calendarBtn = document.getElementById("calendar")
@@ -23,6 +19,11 @@ window.onload = function () {
     calendarBtn.onclick = switchToCalendar
     const paymentBtn = document.querySelector('#payment')
     paymentBtn.onclick = switchToPayment
+
+    // Contact Screen
+    contact.reset()
+    const updateProfileBtn = document.querySelector(".updateBtnFun")
+    updateProfileBtn.onclick = contact.updateProfile
 }
 
 const switchToContact = function(e) {

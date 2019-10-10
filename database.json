@@ -12,7 +12,7 @@
     },
     {
       "userType": "landlord",
-      "first": "Joe",
+      "first": "Tina",
       "last": "Yuen",
       "username": "janette",
       "password": "janette1",
@@ -22,11 +22,38 @@
     {
       "userType": "tenant",
       "first": "Vandana",
-      "last": "Anand",
+      "last": "Arand",
       "username": "vandu",
       "password": "123",
-      "phone": "12345",
-      "email": "hello@gmail.com"
+      "phone": "45335",
+      "email": "hello@gmail.com53536"
+    },
+    {
+      "userType": "landlord",
+      "first": "Joe",
+      "last": "Yuen",
+      "username": "admin",
+      "password": "knock",
+      "phone": "1221312312",
+      "email": "jhyuen@wpi.edu"
+    },
+    {
+      "userType": "landlord",
+      "first": "Jo",
+      "last": "Shmo",
+      "username": "testlandlord",
+      "password": "cool",
+      "phone": "1232112",
+      "email": "dfjalkdfj"
+    },
+    {
+      "userType": "tenant",
+      "first": "John",
+      "last": "Smith",
+      "username": "t1",
+      "password": "t1",
+      "phone": "123-456-1234",
+      "email": "sdfa"
     }
   ],
   "apartments": [
@@ -34,7 +61,72 @@
       "address": "hjhk",
       "key": 8,
       "landlord": "janette"
+    },
+    {
+      "address": "44 Somerset St. Apt. 2",
+      "key": 9,
+      "landlord": "admin"
+    },
+    {
+      "address": "100 Institute Road",
+      "key": 10,
+      "landlord": "admin"
+    },
+    {
+      "address": "fdsads",
+      "key": 11,
+      "landlord": "admin"
+    },
+    {
+      "address": "jdasfdslj",
+      "key": 12,
+      "landlord": "admin"
+    },
+    {
+      "address": "fasdfsd",
+      "key": 13,
+      "landlord": "admin"
+    },
+    {
+      "address": "fasdfsd",
+      "key": 14,
+      "landlord": "admin"
+    },
+    {
+      "address": "fasdfsd",
+      "key": 15,
+      "landlord": "admin"
+    },
+    {
+      "address": "fasdfsd",
+      "key": 16,
+      "landlord": "admin"
+    },
+    {
+      "address": "44 Somerset St. Apt. 1",
+      "key": 17,
+      "landlord": "admin"
+    },
+    {
+      "address": "",
+      "key": 18,
+      "landlord": "admin"
+    },
+    {
+      "address": "Leog",
+      "key": 19,
+      "landlord": "admin"
+    },
+    {
+      "address": "dfasdfs",
+      "key": 20,
+      "landlord": "admin"
+    },
+    {
+      "address": "fdfasdf",
+      "key": 21,
+      "landlord": "admin"
     }
   ],
-  "keycount": 9
+  "keycount": 22
 }
