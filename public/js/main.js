@@ -71,6 +71,9 @@ const addUser = function(e){
                 alert("Landlord key invaild")
                 return
             }
+            else {
+                user.key = key
+            }
         }
 
         const data = JSON.stringify(user)

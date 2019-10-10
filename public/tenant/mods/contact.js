@@ -47,8 +47,16 @@ const reset = function () {
     phoneNumberForm.placeholder = phone
     emailForm.placeholder = email
 
-    getAdmin()
-
+    fetch('/getAdmin', {
+      method: 'GET'
+    }).then(function (response) {
+      return response.json()
+    }).then(function (data) {
+      
+      landlordName.innerText = data.firstName + " " + data.lastName
+      landlordPhone.innerText = data.phone
+      landlordEmail.innerText = data.email
+    })
     console.log("reset")
   })
 }
@@ -86,21 +94,6 @@ const updateProfile = function (e) {
         return false;
 
       })
-  })
-}
-
-const getAdmin = function (e) {
-  e.preventDefault()
-
-  fetch('/getAdmin', {
-    method: 'GET'
-  }).then(function (response) {
-    return response.json()
-  }).then(function (data) {
-
-    landlordName.innerText = data.firstName + " " + data.lastName
-    landlordPhone.innerText = data.phone
-    landlordEmail.innerText = data.email
   })
 }
 

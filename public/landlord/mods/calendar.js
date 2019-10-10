@@ -14,8 +14,9 @@ function calendar(element, filteredEvents) {
         //filteredEvents.innerHTML = "<p id='date'</p>" + date.toString().substring(4, 15) +
         // '<p id="pay" class="eventType">Payment</p>' + getPayment() +
         // '<p id="event" class="eventType">Event</p>' + getEvent() +
-        // '<p id="service" class="eventType">Service</p>' + getService()
-        filteredEvents.innerHTML = "<p id='date'</p>" + date.toString().substring(4, 15) +
+        // '<p id="service" class="eventType">Service</p>' + getService(date)
+        let formatedDate = reformat(date.toString().substring(4, 15));
+        filteredEvents.innerHTML = "<p id='date'</p>" + formatedDate +
             '<p id="pay" class="eventType">Payment</p>' + toHTML(["hi", "hello", "yo"]) +
             '<p id="event" class="eventType">Event</p>' + toHTML(["hi", "hello", "yo"]) +
             '<p id="service" class="eventType">Service</p>' + toHTML(["hi", "hello", "yo"])
@@ -30,6 +31,37 @@ function calendar(element, filteredEvents) {
 
 }
 
+function reformat(date){
+    let month = date.substring(0, 3)
+    if(month === "Jan")
+        month = "01"
+    else if(month === "Feb")
+        month = "02"
+    else if(month === "Mar")
+        month = "03"
+    else if(month === "Apr")
+        month = "04"
+    else if(month === "May")
+        month = "05"
+    else if(month === "Jun")
+        month = "06"
+    else if(month === "Jul")
+        month = "07"
+    else if(month === "Aug")
+        month = "08"
+    else if(month === "Sep")
+        month = "09"
+    else if(month === "Oct")
+        month = "10"
+    else if(month === "Nov")
+        month = "11"
+    else if(month === "Dec")
+        month = "12"
+
+    let day = date.substring(4, 6)
+    let year = date.substring(7)
+    return year + "-" + month + "-" + day;
+}
 
 function getPayment() {
     // fetch('/getEvents', {
@@ -49,8 +81,15 @@ function getEvent() {
     //return toHTML(filteredList)
 }
 
-function getService() {
+function getService(date) {
     //fetch
+    fetch('/getServices', {
+        method: 'GET'
+    }).then(function(response) {
+        return response.json()
+    }).then(function(eventList) {
+        let filteredList = filter(eventList, date)
+    })
     //let filteredList = filter(eventList, date)
     //for(let i = 0; i < filteredList.length; i++) {
         //
