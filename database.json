@@ -85,28 +85,28 @@
       "service": "Shower Repair",
       "date": "2019-10-15",
       "desc": "No water",
-      "key": "56",
+      "apt": "56",
       "serviceid": "Shower Repair56"
     },
     {
       "service": "Drain",
       "date": "2019-10-07",
       "desc": "no hole",
-      "key": "56 Dover St",
+      "apt": "56 Dover St",
       "serviceid": "Drain56 Dover St"
     },
     {
       "service": "Deomlish",
       "date": "2019-10-16",
       "desc": "Time to go..",
-      "key": "55 Dover",
+      "apt": "55 Dover",
       "serviceid": "Deomlish55 Dover"
     },
     {
       "service": "Test",
       "date": "2019-10-14",
       "desc": "test",
-      "key": "test",
+      "apt": "test",
       "serviceid": "Testtest"
     }
   ],
@@ -175,36 +175,13 @@
       "desc": "yuop",
       "apt": "2",
       "paymentid": "yuop2"
-    }
-  ],
-  "services": [
-    {
-      "service": "Shower Repair",
-      "date": "2019-10-15",
-      "desc": "No water",
-      "apt": "56",
-      "serviceid": "Shower Repair56"
     },
     {
-      "service": "Drain",
-      "date": "2019-10-07",
-      "desc": "no hole",
-      "apt": "56 Dover St",
-      "serviceid": "Drain56 Dover St"
-    },
-    {
-      "service": "Deomlish",
-      "date": "2019-10-16",
-      "desc": "Time to go..",
-      "apt": "55 Dover",
-      "serviceid": "Deomlish55 Dover"
-    },
-    {
-      "service": "Test",
-      "date": "2019-10-14",
-      "desc": "test",
-      "apt": "test",
-      "serviceid": "Testtest"
+      "amount": "$90.00",
+      "due": "2019-10-17",
+      "desc": "ujfvjhrwvlh,",
+      "apt": "1",
+      "paymentid": "ujfvjhrwvlh,1"
     }
   ],
   "keycount": 9
