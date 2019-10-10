@@ -83,40 +83,17 @@ const addUser = function(e) {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: data
-        })
-            .then(function (response) {
+        }).then(function (response) {
                 if (response.status === 200) {
                     goToLogin();
                 }
-
-                if (userType === "tenant") {
-                    let key = document.getElementById("Key").value
-                    if (key === "") {
-                        alert("Landlord key invaild")
-                        return
-                    } else {
-                        user.key = key
-                    }
+                else{
+                    alert("username already exist")
                 }
-
-                const data = JSON.stringify(user)
-                console.log(user)
-
-                fetch("/signUp", {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: data
-                })
-                    .then(function (response) {
-                        if (response.status === 200) {
-                            goToLogin();
-                        } else {
-                            alert("Username already exists")
-                        }
-                    })
             })
     }
 }
+
 const login = function(e){
     e.preventDefault();
     const username=document.getElementById('username').value,
