@@ -4,11 +4,11 @@
 [https://www.google.com/?client=safari](https://www.google.com/?client=safari)
 
 ## Team Members
-- [Vandana Anand](https://github.com/vanand23)
-- [Ching Wing Cheng](https://github.com/WinnyCheng)
-- [Janette Fong](https://github.com/jlfong)
-- [Shine Lin Thant](https://github.com/heartkiIIer)
-- [Joseph Yuen](https://github.com/jhyuen)
+- [Vandana Anand](https://github.com/vanand23): Passport login and payments UI
+- [Ching Wing Cheng](https://github.com/WinnyCheng): Passport register user and calendar
+- [Janette Fong](https://github.com/jlfong): Calendar and events 
+- [Shine Lin Thant](https://github.com/heartkiIIer): Scheduling Payments and database structure
+- [Joseph Yuen](https://github.com/jhyuen): Design User Mockups for the screens, contacts, and managing apartments
 
 ## Login Information
 - **Landlord**: janette (username), janette1 (password)
@@ -29,13 +29,16 @@ Your project should consist of a complete Web application, exhibiting facets of 
 
 ## Features
 - **Login/Register** - Passport authentication
-- **Server and database** - Express and lowdb
-- **Landlord and Tenant Views**
-- **Schedule** - Landlords can create new events to add to calendar
+- **Server and database** - Express, lowdb, node.js
+- **Landlord and Tenant Views** - Javascript, HTML, and Bootstrap for CSS 
+- **Schedule** - Landlords can create new events to add to the calendar
 - **Calendar** - Displays events related to each user
 - **Manage Apartments** - Landlords can manage keys/apartments
 - **Contact** - Tenants and view contact information
 - **Payment** - Tenants can view their bills and navigate to PayPal
+
+## Challenges
+Some challenges we faced was scoping the project and time management. When the team members met to discuss ideas for the final project, we brainstormed many different features and soon realized most of these features would be too out of scope for the project because we only had 1.5 weeks to implement it. In addition, all the team members had other classes and time commitments so we had to make sure to prioritize time for implementing this final project. We made sure to keep the features down to what we can accomplish within the timeframe and deliver a successful product. 
 
 ## Technical Achievements
 - **Side Tabs for Multiple Views (Technical)**: We wanted the user to be able to click tabs on the side and have the main window display the necessary information, which required us to utilize tags wisely for both the landlord and tenant views.
