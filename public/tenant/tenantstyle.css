@@ -218,6 +218,12 @@ label {
   display: block;
 }
 
+#calendarScreen {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
 #form {
   margin-top: 20px;
   display: flex;
@@ -283,4 +289,54 @@ label {
 
 #payment:hover {
   background: #7DA45E;
+}
+
+#my-calendar {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: auto;
+  vertical-align: center;
+  horiz-align: center;
+  width: 50%;
+  zoom: 215%;
+}
+
+#events {
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.eventType {
+  font-weight: bold;
+  font-size: 25pt;
+  margin: 5% 5% 0 5%;
+}
+
+#payTitle {
+  color: #F2655A;
+}
+
+#eventTitle {
+  color: #7FC8Ec;
+}
+
+#serviceTitle {
+  color: #95BF74;
+}
+
+#date {
+  margin: 5%;
+  font-weight:bold;
+  font-size: 30pt;
+  color: #808080;
+}
+
+ul {
+  list-style: circle;
+  margin: 10px 5% 5% 5%;
 }

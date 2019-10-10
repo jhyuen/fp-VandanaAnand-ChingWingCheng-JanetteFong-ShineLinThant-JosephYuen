@@ -38,7 +38,7 @@ const landlordReg = function(e){
     document.getElementById("KeyInput").style.display = "none"
 }
 
-const addUser = function(e){
+const addUser = function(e) {
     e.preventDefault()
     let firstName = document.getElementById("FirstName").value
     let lastName = document.getElementById("LastName").value
@@ -47,14 +47,14 @@ const addUser = function(e){
     let phoneNum = document.getElementById("PhoneNumber").value
     let email = document.getElementById("Email").value
 
-    if(firstName === "" ||
+    if (firstName === "" ||
         lastName === "" ||
         username === "" ||
         password === "" ||
         phoneNum === "" ||
-        email === ""){
+        email === "") {
         alert("Please fill in all sections")
-    }else{
+    } else {
         let user = {
             userType: userType,
             first: firstName,
@@ -72,7 +72,7 @@ const addUser = function(e){
                 return
             }
             else {
-                user.key = key
+                user.key = parseInt(key, 10)
             }
         }
 
@@ -83,13 +83,12 @@ const addUser = function(e){
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: data
-        })
-            .then(function(response){
-                if(response.status === 200) {
+        }).then(function (response) {
+                if (response.status === 200) {
                     goToLogin();
                 }
-                else {
-                    alert("Username already exists")
+                else{
+                    alert("username already exist")
                 }
             })
     }
@@ -128,7 +127,7 @@ const login = function(e){
             goToLandlordPage()
         }
     })
-};
+}
 
 const signUpFromLogin = function(e) {
     e.preventDefault()
@@ -172,4 +171,4 @@ const signUpFromLogin = function(e) {
 </script>
 */
 
-export {tenantReg, landlordReg, addUser, login, signUpFromLogin}
+    export {tenantReg, landlordReg, addUser, login, signUpFromLogin}

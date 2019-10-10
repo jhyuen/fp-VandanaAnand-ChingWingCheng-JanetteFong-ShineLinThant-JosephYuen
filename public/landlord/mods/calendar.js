@@ -1,6 +1,6 @@
 console.log('calendar.js')
 
-function calendar(element, filteredEvents) {
+function calendar(element, payment, eventdiv, service, day) {
     let myCalendar = jsCalendar.new({
         target: element,
         monthFormat: "month YYYY"
@@ -14,14 +14,12 @@ function calendar(element, filteredEvents) {
         //filteredEvents.innerHTML = "<p id='date'</p>" + date.toString().substring(4, 15) +
         // '<p id="pay" class="eventType">Payment</p>' + getPayment() +
         // '<p id="event" class="eventType">Event</p>' + getEvent() +
-        // '<p id="service" class="eventType">Service</p>' + getService(date)
+        // '<p id="service" class="eventType">Service</p>' + getService()
         let formatedDate = reformat(date.toString().substring(4, 15));
-        filteredEvents.innerHTML = "<p id='date'</p>" + formatedDate +
-            '<p id="pay" class="eventType">Payment</p>' + toHTML(["hi", "hello", "yo"]) +
-            '<p id="event" class="eventType">Event</p>' + toHTML(["hi", "hello", "yo"]) +
-            '<p id="service" class="eventType">Service</p>' + toHTML(["hi", "hello", "yo"])
-
-        console.log(date.toString().substring(4, 15));
+        day.innerText = formatedDate
+        getPayment(payment, formatedDate)
+        getEvent(eventdiv, formatedDate)
+        getService(service, formatedDate)
     });
 
     myCalendar.onDateRender(function(date, element, info){
@@ -63,54 +61,58 @@ function reformat(date){
     return year + "-" + month + "-" + day;
 }
 
-function getPayment() {
-    // fetch('/getEvents', {
-    //     method: 'GET'
-    // }).then(function(response) {
-    //     return response.json()
-    // }).then(function (eventList) {
-    //
-    // })
-    //let filteredList = filter(eventList, date)
-    //return toHTML(filteredList)
-}
-
-function getEvent() {
-    //fetch
-    //let filteredList = filter(eventList, date)
-    //return toHTML(filteredList)
-}
-
-function getService(date) {
-    //fetch
-    fetch('/getServices', {
+function getPayment(pay, date) {
+    fetch('/getPaylandlord', {
         method: 'GET'
-    }).then(function(response) {
-        return response.json()
-    }).then(function(eventList) {
-        let filteredList = filter(eventList, date)
+    }).then(function(res){
+        return res.json()
+    }).then(function(payList){
+        let filteredList = filter(payList, date)
+        let htmlString = '<ul>'
+        for(let p of filteredList) {
+            htmlString += '<li>Amount Due: ' + p.amount + '<br>Description: ' + p.desc + '</li>'
+        }
+        htmlString += '</ul>'
+        pay.innerHTML = '<p id="payTitle" class="eventType">Payments</p>' + htmlString
     })
-    //let filteredList = filter(eventList, date)
-    //for(let i = 0; i < filteredList.length; i++) {
-        //
-    //}
-    //return toHTML(filteredList)
 }
 
-//convert filtered list to html code
-function toHTML(filteredList) {
-    let htmlString = '<ul>'
-    for(let i = 0; i < filteredList.length; i++) {
-        htmlString += '<li>' + filteredList[i] + '</li>'
-    }
-    htmlString += '</ul>'
-    return htmlString
+function getEvent(event, date) {
+    fetch('/getEventslandlord', {
+        method: 'GET'
+    }).then(function(res){
+        return res.json()
+    }).then(function(EventList){
+        let filteredList = filter(EventList, date)
+        let htmlString = '<ul>'
+        for(let e of filteredList) {
+            htmlString += '<li>Event name: ' + e.eventname + '<br>Description: ' + e.desc + '</li>'
+        }
+        htmlString += '</ul>'
+        event.innerHTML = '<p id="eventTitle" class="eventType">Events</p>' + htmlString
+    })
+}
+
+function getService(service, date) {
+    fetch('/getServicelandlord', {
+        method: 'GET'
+    }).then(function(res){
+        return res.json()
+    }).then(function(EventList){
+        let filteredList = filter(EventList, date)
+        let htmlString = '<ul>'
+        for(let s of filteredList) {
+            htmlString += '<li>Service: ' + s.service + '<br>Description: ' + s.desc + '</li>'
+        }
+        htmlString += '</ul>'
+        service.innerHTML = '<p id="serviceTitle" class="eventType">Service</p>' + htmlString
+    })
 }
 
 function filter(eventList, date) {
     let filteredList = []
     for(let i = 0; i < eventList.length; i++) {
-        if(date === eventList[i].date) {
+        if(date === eventList[i].day || date === eventList[i].due || date === eventList[i].date) {
             filteredList.push(eventList[i])
         }
     }

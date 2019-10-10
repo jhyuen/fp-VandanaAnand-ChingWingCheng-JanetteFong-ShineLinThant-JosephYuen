@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="tenantstyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.js"
+          integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-jscalendar@1.4.4/source/jsCalendar.min.css"
+        integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
 </head>
 
 <body>
@@ -70,64 +75,62 @@
     </div>
 
     <div id="calendarScreen">
-      <h3>Calendar</h3>
+      <div class="container">
+        <div id="my-calendar" class="material-theme red"></div>
+        <div id="events">
+          <p id='date'></p>
+          <div id="CalPayment"></div>
+          <div id="Event"></div>
+          <div id="Service"></div>
+        </div>
+      </div>
     </div>
 
     <div id="paymentScreen">
       <h3>Payment</h3>
-      <div class="row" style="position: absolute;left:10%;">
-        <div class="column" style="background-color:#aaa;" onclick="getContainer()">
-          <h2>September 2019</h2>
-        </div>
-        <div class="column" style="background-color:#bbb;" onclick="getContainer()">
-          <h2>October 2019</h2>
-        </div>
-        <div class="column" style="background-color:#ccc;" onclick="getContainer()">
-          <h2>November 2019</h2>
-        </div>
-        <div class="column" style="background-color:#ddd;" onclick="getContainer()">
-          <h2>December 2019</h2>
-        </div>
-        <div id="myDIV"
-          style="position:absolute;left:270%;top:2%;width:100%;height:100%;background-color:lightblue;margin-top:20px;text-align:center;padding:50px;border-style:solid;">
-          <h2>Rent Due!</h2>
-          <p>Payment: $500</p>
-          <p>Due: September 30th, 2019</p>
-          <button><a href="https://www.paypal.com/us/for-you/transfer-money/send-money">Pay Here!</a></button>
-        </div>
+      <div id="getButtons">
+        <button onclick="getPayments()">Click Me!</button>
+
       </div>
+      <div id="displayInformation">
 
-      <script>
-        // Get the elements with class="column"
-        var elements = document.getElementsByClassName("column");
-
-        for (let i = 0; i < elements.length; i++) {
-          elements[i].style.width = "200%";
-        }
-
-        function getContainer() {
-          var x = document.getElementById("myDIV");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
-        }
-
-        /* Optional: Add active class to the current button (highlight it) */
-        var container = document.getElementById("btnContainer");
-        var btns = container.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-          });
-        }
-      </script>
-    </div>
+      </div>
+     </div>
   </div>
+  <script>
+    function getPayments(){
+      fetch('/payments', {
+        method:'GET',
+      }).then(function(response){
+        return response.json()
+      }).then(function(listPayment){
+        displayDates(listPayment)
+      })
+    }
 
+    function displayDates(listPayment){
+      let finalDates = document.querySelector('#getButtons')
+      let str = "";
+      for(let pay of listPayment){
+        str+='<button id="' + pay.due+ '">' + pay.due + '</button>'
+        let btn = document.getElementById(pay.due)
+        // btn.onclick = displayInfo(pay)
+      }
+      finalDates.innerHTML = str;
+    }
+
+    function displayInfo(pay){
+      let finalInfo = document.querySelector('#displayInformation')
+      let str ="";
+      str += 'Type:'+pay.desc;
+      str += 'Due:'+pay.due;
+      str += '<button><a href="https://www.paypal.com/us/for-you/transfer-money/send-money">Pay Here!</a></button>'
+
+      finalInfo.innerHTML += str;
+    }
+
+  </script>
+  
   <script type="module" src="tenantscript.js"></script>
 
 </body>

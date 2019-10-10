@@ -43,6 +43,95 @@ label {
   background-color: #61A49E;
 }
 
+#paymentform, #serviceform, #eventform {
+  display: flex;
+  flex-direction: column;
+}
+
+.PaymentBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: red;
+  border: 4px solid red;
+  border-radius: 2px;
+  color: white;
+  padding: 12px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.PaymentBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
+}
+
+.ServiceBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: #7FC8EC;
+  border: 4px solid #7FC8EC;
+  border-radius: 2px;
+  color: white;
+  padding: 12px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.ServiceBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #7FC8EC;
+}
+
+.EventBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: lightseagreen;
+  border: 4px solid lightseagreen;
+  border-radius: 2px;
+  color: white;
+  padding: 12px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.EventBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: lightseagreen;
+}
+
+.ScheduleBtn {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.3s;
+  background-color: lightgreen;
+  border: 4px solid lightgreen;
+  border-radius: 2px;
+  color: white;
+  padding: 12px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.ScheduleBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: lightgreen;
+}
+
 .nav-top {
   overflow: visible;
   position: fixed;
@@ -422,15 +511,15 @@ label {
   margin: 5% 5% 0 5%;
 }
 
-#pay {
+#payTitle {
   color: #F2655A;
 }
 
-#event {
+#eventTitle {
   color: #7FC8Ec;
 }
 
-#service {
+#serviceTitle {
   color: #95BF74;
 }
 
