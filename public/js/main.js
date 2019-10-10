@@ -38,7 +38,7 @@ const landlordReg = function(e){
     document.getElementById("KeyInput").style.display = "none"
 }
 
-const addUser = function(e){
+const addUser = function(e) {
     e.preventDefault()
     let firstName = document.getElementById("FirstName").value
     let lastName = document.getElementById("LastName").value
@@ -47,14 +47,14 @@ const addUser = function(e){
     let phoneNum = document.getElementById("PhoneNumber").value
     let email = document.getElementById("Email").value
 
-    if(firstName === "" ||
+    if (firstName === "" ||
         lastName === "" ||
         username === "" ||
         password === "" ||
         phoneNum === "" ||
-        email === ""){
+        email === "") {
         alert("Please fill in all sections")
-    }else{
+    } else {
         let user = {
             userType: userType,
             first: firstName,
@@ -65,15 +65,8 @@ const addUser = function(e){
             email: email
         }
 
-        if(userType === "tenant") {
-            let key = document.getElementById("Key").value
-            if(key === "") {
-                alert("Landlord key invaild")
-                return
-            }
-            else {
-                user.key = key
-            }
+        if (userType === "tenant") {
+            user.key = document.getElementById("Key").value
         }
 
         const data = JSON.stringify(user)
@@ -84,17 +77,39 @@ const addUser = function(e){
             headers: {"Content-Type": "application/json"},
             body: data
         })
-            .then(function(response){
-                if(response.status === 200) {
+            .then(function (response) {
+                if (response.status === 200) {
                     goToLogin();
                 }
-                else {
-                    alert("Username already exists")
+
+                if (userType === "tenant") {
+                    let key = document.getElementById("Key").value
+                    if (key === "") {
+                        alert("Landlord key invaild")
+                        return
+                    } else {
+                        user.key = key
+                    }
                 }
+
+                const data = JSON.stringify(user)
+                console.log(user)
+
+                fetch("/signUp", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: data
+                })
+                    .then(function (response) {
+                        if (response.status === 200) {
+                            goToLogin();
+                        } else {
+                            alert("Username already exists")
+                        }
+                    })
             })
     }
 }
-
 const login = function(e){
     e.preventDefault();
     const username=document.getElementById('username').value,
@@ -128,7 +143,7 @@ const login = function(e){
             goToLandlordPage()
         }
     })
-};
+}
 
 const signUpFromLogin = function(e) {
     e.preventDefault()
@@ -172,4 +187,4 @@ const signUpFromLogin = function(e) {
 </script>
 */
 
-export {tenantReg, landlordReg, addUser, login, signUpFromLogin}
+    export {tenantReg, landlordReg, addUser, login, signUpFromLogin}
