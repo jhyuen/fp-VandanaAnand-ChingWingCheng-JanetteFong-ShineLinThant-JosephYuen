@@ -63,6 +63,8 @@ app.post('/test', function (req, res) {
 })
 
 app.get('/currentUser', function (req, res) {
+
+
   res.send(JSON.stringify(db.get('users').find({ username: credentials }).value()))
 })
 
@@ -72,25 +74,32 @@ app.get('/', function (request, response) {
   response.send('hello, world!');
 });
 
+
 // connect to db
 const adapter = new FileSync("database.json")
 const db = low(adapter)
 db.defaults({ users: [], apartments: [], keycount: 1 }).write()
+
+app.get('/getApartments', function(req, res){
+  let aptlist = db.get('apartments').filter({landlord: credentials}).values()
+  res.send(JSON.stringify(aptlist))
+})
+
 
 app.post("/signUp", (req, res) => {
   let user = db.get("users").filter({ username: req.body.username })
   console.log(user.value().length)
   if (user.value().length === 0) {
     db.get('users').push(req.body).write()
-
     res.writeHead(200, "OK", { 'Content-Type': 'text/plain' })
     res.end()
   }
-  else{
-    res.writeHead( 422, "User Exists", {'Content-Type': 'text/plain' })
+  else {
+    res.writeHead(422, "User Exists", { 'Content-Type': 'text/plain' })
     res.end()
   }
 })
+
 
 app.post("/addEvent", (req, res) => {
   let event = db.get("events").filter({ eventid: req.body.eventid})
@@ -108,34 +117,35 @@ app.post("/addEvent", (req, res) => {
 })
 
 app.post("/addPayment", (req, res) => {
-  let payment = db.get("payments").filter({ paymentid: req.body.paymentid})
+  let payment = db.get("payments").filter({ paymentid: req.body.paymentid })
   console.log(payment.value().length)
-  if(payment.value().length === 0){
+  if (payment.value().length === 0) {
     db.get('payments').push(req.body).write()
 
-    res.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
+    res.writeHead(200, "OK", { 'Content-Type': 'text/plain' })
     res.end()
   }
-  else{
-    res.writeHead( 422, "Payment Exists", {'Content-Type': 'text/plain' })
+  else {
+    res.writeHead(422, "Payment Exists", { 'Content-Type': 'text/plain' })
     res.end()
   }
 })
 
 app.post("/addService", (req, res) => {
-  let service = db.get("services").filter({ serviceid: req.body.serviceid})
+  let service = db.get("services").filter({ serviceid: req.body.serviceid })
   console.log(service.value().length)
-  if(service.value().length === 0){
+  if (service.value().length === 0) {
     db.get('services').push(req.body).write()
 
-    res.writeHead( 200, "OK", {'Content-Type': 'text/plain' })
+    res.writeHead(200, "OK", { 'Content-Type': 'text/plain' })
     res.end()
   }
-  else{
-    res.writeHead( 422, "Service Exists", {'Content-Type': 'text/plain' })
+  else {
+    res.writeHead(422, "Service Exists", { 'Content-Type': 'text/plain' })
     res.end()
   }
 })
+
 
 app.post('/login',
   passport.authenticate('local-login', {}),
@@ -145,6 +155,11 @@ app.post('/login',
     res.end(JSON.stringify(type))
     // console.log('login works')
     // res.redirect('/');
+    // console.log('hi')
+    // if(user.userType === "landlord") {
+    //   let get_apts = db.get('apartments').filter({ landlord: req.body.username });
+    //   console.log(get_apts);
+    // }
   }
 );
 

@@ -7,6 +7,7 @@ var managementScreen = document.getElementById("manageScreen")
 var calendarScreen = document.getElementById("calendarScreen")
 var scheduleScreen = document.getElementById("scheduleScreen")
 
+let apts;
 let element = document.getElementById("my-calendar");
 let filteredEvents = document.getElementById("allFilteredEvents")
 calendar.calendar(element, filteredEvents)
@@ -38,6 +39,16 @@ window.onload = function () {
     // Schedule Screen
 }
 
+function populate(id) {
+    var ele = document.getElementById(id);
+    ele.innerHTML = '<option value="">-- Select an apartment key --</option>'
+    for (var i = 0; i < apts.length; i++) {
+        // POPULATE SELECT ELEMENT WITH JSON.
+        ele.innerHTML = ele.innerHTML +
+            '<option value="' + apts[i]['key'] + '">' + 'Key #: ' + apts[i]['key'] + ', ' + apts[i]['address'] + '</option>';
+    }
+}
+
 const switchToManagement = function(e) {
     e.preventDefault()
     
@@ -46,7 +57,7 @@ const switchToManagement = function(e) {
     scheduleScreen.style.display = 'none'
 
     manage.reset()
-            
+
     console.log("Manage")
 }
 
@@ -69,17 +80,22 @@ const switchToSchedule = function(e) {
 
     console.log("Schedule")
 
-}
+    fetch('/getApartments', {
+        method: 'GET'
+    }).then(function(response) {
+        return response.json()
+    }).then(function(data) {
+        console.log("data", data)
+        // console.log(data.address)
+        // console.log(data.landlord)
+        for(let i = 0; i < data.length; i++) {
+            console.log("Address " + data[i].address)
+            console.log("Landlord " + data[i].landlord)
+            console.log("Key " + data[i].key)
+        }
+        apts = data;
+    })
 
-const switchToInbox = function(e) {
-    e.preventDefault()
-    
-    managementScreen.style.display = 'none'
-    calendarScreen.style.display = 'none'
-    scheduleScreen.style.display = 'none'
-    inboxScreen.style.display = 'block'
-
-    console.log("Inbox")
 }
 
 $("input[data-type='currency']").on({
@@ -165,4 +181,4 @@ function formatCurrency(input, blur) {
     input[0].setSelectionRange(caret_pos, caret_pos);
 }
 
-export {managementScreen, calendarScreen, scheduleScreen}
+ export {calendarScreen, managementScreen, scheduleScreen, populate}

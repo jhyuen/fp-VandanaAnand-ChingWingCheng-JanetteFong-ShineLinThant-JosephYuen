@@ -63,6 +63,21 @@
       "address": "44 Somerset St. Apt. 2",
       "key": 8,
       "landlord": "janette"
+    },
+    {
+      "address": "abch",
+      "key": 2,
+      "landlord": "janette"
+    },
+    {
+      "address": "jii",
+      "key": 1,
+      "landlord": "janette"
+    },
+    {
+      "address": "hjhk",
+      "key": 7,
+      "landlord": "me"
     }
   ],
   "services": [
@@ -153,6 +168,13 @@
       "desc": "test",
       "apt": "test",
       "paymentid": "testtest"
+    },
+    {
+      "amount": "8",
+      "due": "2019-10-11",
+      "desc": "yuop",
+      "apt": "2",
+      "paymentid": "yuop2"
     }
   ],
   "services": [

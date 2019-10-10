@@ -1,4 +1,4 @@
-import {scheduleScreen, calendarScreen, inboxScreen, managementScreen} from '../landlordscript.js'
+import {scheduleScreen, calendarScreen, managementScreen, populate} from '../landlordscript.js'
 
 console.log('schedule.js')
 
@@ -42,8 +42,6 @@ const addPayment = function(e){
                 managementScreen.style.display = 'none'
                 calendarScreen.style.display = 'block'
                 scheduleScreen.style.display = 'none'
-                inboxScreen.style.display = 'none'
-
             }
             else {
                 alert("Payment already scheduled!")
@@ -66,6 +64,7 @@ const addService = function(e){
         apt: apt,
         serviceid: serviceid
     }
+    console.log(service)
 
     document.getElementById("servicetitle").value = ""
     document.getElementById("date").value = ""
@@ -85,7 +84,6 @@ const addService = function(e){
                 managementScreen.style.display = 'none'
                 calendarScreen.style.display = 'block'
                 scheduleScreen.style.display = 'none'
-                inboxScreen.style.display = 'none'
             }
             else {
                 alert("Service already scheduled!")
@@ -127,7 +125,6 @@ const addEvent = function(e){
                 managementScreen.style.display = 'none'
                 calendarScreen.style.display = 'block'
                 scheduleScreen.style.display = 'none'
-                inboxScreen.style.display = 'none'
             }
             else {
                 alert("Event already scheduled!")
@@ -147,6 +144,7 @@ $("#PaymentBtn").click(function() {
     $("#eventDetails").css("display", "none");
     $("#paymentDetails").css("display", "");
     $("#paymentForm").css("display", "");
+    populate('paymentapartment');
 });
 
 $("#ServiceBtn").click(function() {
@@ -154,6 +152,7 @@ $("#ServiceBtn").click(function() {
     $("#paymentForm").css("display", "none");
     $("#eventDetails").css("display", "none");
     $("#serviceDetails").css("display", "");
+    populate('serviceapartment');
 });
 
 $("#EventBtn").click(function() {
@@ -161,6 +160,7 @@ $("#EventBtn").click(function() {
     $("#paymentForm").css("display", "none");
     $("#serviceDetails").css("display", "none");
     $("#eventDetails").css("display", "");
+    populate('eventapartment');
 });
 
 // Export functions and const
