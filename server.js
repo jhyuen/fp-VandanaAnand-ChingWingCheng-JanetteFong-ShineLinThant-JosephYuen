@@ -147,6 +147,64 @@ app.get('/payments', function (req, res) {
   res.send(JSON.stringify(payment))
 })
 
+//getDates
+app.get('/getDatesTenant', function (req, res) {
+  const user = db.get('users').find({username: credentials}).value()
+  const eventlist = db.get('events').filter({apt: user.key}).value()
+  const servicelist = db.get('services').filter({apt: user.key}).value()
+  const paylist = db.get('payments').filter({apt: user.key}).value()
+
+  let dateList = [];
+  for(let event of eventlist){
+    if(!dateList.includes(event.day)) {
+      dateList.push(event.day)
+    }
+  }
+  for(let ser of servicelist){
+    if(!dateList.includes(ser.date)) {
+      dateList.push(ser.date)
+    }
+  }
+  for(let pay of paylist){
+    if(!dateList.includes(pay.due)) {
+      dateList.push(pay.due)
+    }
+  }
+  console.log(dateList)
+  res.send(JSON.stringify(dateList))
+})
+
+app.get('/getDatesLandlord', function (req, res) {
+  const apartments = db.get('apartments').filter({landlord: credentials}).value()
+  let eventList = []
+  let servicelist = []
+  let paylist = []
+  for(let apt of apartments){
+    eventList = eventList.concat(db.get('events').filter({apt: apt.key}).value())
+    servicelist = servicelist.concat(db.get('services').filter({apt: apt.key}).value())
+    paylist = paylist.concat(db.get('payments').filter({apt: apt.key}).value())
+  }
+
+  let dateList = [];
+  for(let event of eventList){
+    if(!dateList.includes(event.day)) {
+      dateList.push(event.day)
+    }
+  }
+  for(let ser of servicelist){
+    if(!dateList.includes(ser.date)) {
+      dateList.push(ser.date)
+    }
+  }
+  for(let pay of paylist){
+    if(!dateList.includes(pay.due)) {
+      dateList.push(pay.due)
+    }
+  }
+  console.log(dateList)
+  res.send(JSON.stringify(dateList))
+})
+
 // domain views index.html
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
