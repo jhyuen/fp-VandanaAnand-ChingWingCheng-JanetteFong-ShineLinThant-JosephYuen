@@ -109,16 +109,6 @@ function getService(service, date) {
     })
 }
 
-//convert filtered list to html code
-function toHTML(filteredList) {
-    let htmlString = '<ul>'
-    for(let i = 0; i < filteredList.length; i++) {
-        htmlString += '<li>' + filteredList[i].eventname + '</li>'
-    }
-    htmlString += '</ul>'
-    return htmlString
-}
-
 function filter(eventList, date) {
     let filteredList = []
     for(let i = 0; i < eventList.length; i++) {

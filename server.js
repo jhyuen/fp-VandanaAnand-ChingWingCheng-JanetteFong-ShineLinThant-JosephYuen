@@ -92,6 +92,25 @@ app.get('/getServicelandlord', function(req, res){
   res.send(JSON.stringify(servicelist))
 })
 
+//Calendar for Tenants
+app.get('/getEventsTenant', function(req, res){
+  let user = db.get('users').find({username: credentials}).value()
+  console.log(user.key)
+  let eventList = db.get('events').filter({apt: user.key}).value()
+  console.log(eventList)
+  res.send(JSON.stringify(eventList))
+})
+app.get('/getPayTenant', function(req, res){
+  const user = db.get('users').find({username: credentials}).value()
+  let paylist = db.get('payments').filter({apt: user.key}).value()
+  res.send(JSON.stringify(paylist))
+})
+app.get('/getServiceTenant', function(req, res){
+  const user = db.get('users').find({username: credentials}).value()
+  const servicelist = db.get('services').filter({apt: user.key}).value()
+  res.send(JSON.stringify(servicelist))
+})
+
 //TenantPayment
 app.get('/payments', function (req, res) {
   // res.send(JSON.stringify(db.get('payments').filter({ key:req.body }).values()))
