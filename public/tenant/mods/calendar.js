@@ -5,6 +5,22 @@ function calendar(element, payment, eventdiv, service, day) {
         target: element,
         monthFormat: "month YYYY"
     });
+    //get a list of dates
+    fetch('/getDatesTenant',{
+        method: 'GET'
+    }).then(function(response){
+        return response.json()
+    }).then(function(dateList){
+        myCalendar.onDateRender(function(date, element, info){
+            for(let singleDate of dateList){
+                if (!info.isCurrent && reformat(date.toString().substring(4, 15)) === singleDate) {
+                    element.style.fontWeight = 'bold';
+                    element.style.color = (info.isCurrentMonth) ? '#c32525' : '#ffb4b4';
+                }
+            }
+
+        });
+    });
 
     myCalendar.onDateClick(function(event, date){
         //selecting a day
@@ -22,10 +38,6 @@ function calendar(element, payment, eventdiv, service, day) {
         getService(service, formatedDate)
     });
 
-    myCalendar.onDateRender(function(date, element, info){
-        //if theres event on date
-        //change color of date and/or bold
-    });
 
 }
 
