@@ -66,6 +66,15 @@ app.get('/currentUser', function (req, res) {
   res.send(JSON.stringify(db.get('users').find({ username: credentials }).value()))
 })
 
+app.get('/payments', function (req, res) {
+  // res.send(JSON.stringify(db.get('payments').filter({ key:req.body }).values()))
+  const k = db.get('users').find({username:credentials}).value().key
+  const payment = db.get('payments').filter({key: k}).value()
+  console.log(payment)
+  res.send(JSON.stringify(payment))
+})
+
+
 // domain views index.html
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html');

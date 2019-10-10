@@ -23,6 +23,18 @@ window.onload = function () {
     calendarBtn.onclick = switchToCalendar
     const paymentBtn = document.querySelector('#payment')
     paymentBtn.onclick = switchToPayment
+
+    fetch('/currentUser', {
+        method: 'GET'
+    }).then(function(response) {
+        return response.json()
+    }).then(function(data) {
+        console.log("data", data)
+        console.log(data.first)
+        console.log(data.last)
+        const welcomeTxt = document.querySelector('.welcome')
+        welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
+    })
 }
 
 const switchToContact = function(e) {

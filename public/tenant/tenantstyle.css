@@ -4,6 +4,33 @@ body {
   color: black;
 }
 
+/*.apartment-group {*/
+/*  display: inline-block;*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*  margin-top: 40px;*/
+/*}*/
+
+/*.apartment-group button {*/
+/*  -webkit-transition-duration: 0.4s;*/
+/*  transition-duration: 0.3s;*/
+/*  border: none;*/
+/*  background-color: #79C4BD;*/
+/*  color: white;*/
+/*  padding: 18px 24px;*/
+/*  margin-bottom: 5px;*/
+/*  cursor: pointer;*/
+/*  width: 100%;*/
+/*  text-align: left;*/
+/*  font-size: 36px;*/
+/*}*/
+
+/*!* Add a background color on hover *!*/
+
+/*.apartment-group button:hover {*/
+/*  background-color: #61A49E;*/
+/*}*/
+
 .welcome {
   float: left;
   font-size: 30px;
