@@ -26,7 +26,8 @@
       "username": "vandu",
       "password": "123",
       "phone": "12345",
-      "email": "hello@gmail.com"
+      "email": "hello@gmail.com",
+      "key": ""
     }
   ],
   "apartments": [
@@ -34,7 +35,116 @@
       "address": "hjhk",
       "key": 8,
       "landlord": "janette"
+    },
+    {
+      "address": "hjhk",
+      "key": 1,
+      "landlord": "janette"
     }
   ],
-  "keycount": 9
+  "keycount": 9,
+  "events": [
+    {
+      "eventname": "BBQ",
+      "day": "2019-10-23",
+      "desc": "Veggis can die",
+      "key": 8,
+      "eventid": "BBQ56 Fluffy St"
+    },
+    {
+      "eventname": "House Tour",
+      "day": "2019-10-23",
+      "desc": "",
+      "key": 8,
+      "eventid": ""
+    },
+    {
+      "eventname": "test",
+      "day": "2019-10-16",
+      "desc": "test",
+      "key": 1,
+      "eventid": "testtest"
+    },
+    {
+      "eventname": "BBQ2",
+      "day": "2019-10-23",
+      "desc": "Veggis can die",
+      "key": 1,
+      "eventid": "BBQ56 Fluffy St"
+    },
+    {
+      "eventname": "House Tour2",
+      "day": "2019-10-16",
+      "desc": "",
+      "key": 1,
+      "eventid": ""
+    },
+    {
+      "eventname": "test2",
+      "day": "2019-10-16",
+      "desc": "test",
+      "key": 8,
+      "eventid": "testtest"
+    }
+  ],
+  "payments": [
+    {
+      "amount": "20",
+      "due": "2019-10-23",
+      "desc": "Rent",
+      "key": 8,
+      "paymentid": "Rent56 Dover st"
+    },
+    {
+      "amount": "500",
+      "due": "2019-10-16",
+      "desc": "Fridge",
+      "key": 1,
+      "paymentid": "Fridge44 Dover St"
+    },
+    {
+      "amount": "$9,000.00",
+      "due": "2020-01-10",
+      "desc": "New House",
+      "key": "33 Dover St",
+      "paymentid": "New House33 Dover St"
+    },
+    {
+      "amount": "$0.00",
+      "due": "2019-10-02",
+      "desc": "test",
+      "key": 8,
+      "paymentid": "testtest"
+    }
+  ],
+  "services": [
+    {
+      "service": "Shower Repair",
+      "date": "2019-10-15",
+      "desc": "No water",
+      "key": 8,
+      "serviceid": "Shower Repair56"
+    },
+    {
+      "service": "Drain",
+      "date": "2019-10-16",
+      "desc": "no hole",
+      "key": "56 Dover St",
+      "serviceid": "Drain56 Dover St"
+    },
+    {
+      "service": "Deomlish",
+      "date": "2019-10-16",
+      "desc": "Time to go..",
+      "key": 1,
+      "serviceid": "Deomlish55 Dover"
+    },
+    {
+      "service": "Test",
+      "date": "2019-10-14",
+      "desc": "test",
+      "key": 5,
+      "serviceid": "Testtest"
+    }
+  ]
 }

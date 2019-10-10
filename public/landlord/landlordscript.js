@@ -13,8 +13,11 @@ var calendarScreen = document.getElementById("calendarScreen")
 var scheduleScreen = document.getElementById("scheduleScreen")
 
 let element = document.getElementById("my-calendar");
-let filteredEvents = document.getElementById("allFilteredEvents")
-calendar.calendar(element, filteredEvents)
+let day = document.getElementById("date")
+let payment = document.getElementById("Payment")
+let event = document.getElementById("Event")
+let service = document.getElementById("Service")
+calendar.calendar(element, payment, event, service, day)
 
 window.onload = function () {
     const managementBtn = document.querySelector('#manage')
