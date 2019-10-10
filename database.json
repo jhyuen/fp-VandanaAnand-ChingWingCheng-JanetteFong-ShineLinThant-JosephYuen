@@ -46,6 +46,16 @@
       "phone": "1111111111",
       "email": "web@wpi.edu",
       "key": "webkey"
+    },
+    {
+      "userType": "tenant",
+      "first": "John",
+      "last": "Smith",
+      "username": "t1",
+      "password": "t1",
+      "phone": "21323",
+      "email": "2313",
+      "key": "8"
     }
   ],
   "apartments": [
