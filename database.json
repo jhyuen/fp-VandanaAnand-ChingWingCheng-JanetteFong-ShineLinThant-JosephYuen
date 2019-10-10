@@ -8,7 +8,7 @@
       "password": "123",
       "phone": "123",
       "email": "123",
-      "key": ""
+      "key": 8
     },
     {
       "userType": "landlord",
@@ -26,7 +26,8 @@
       "username": "vandu",
       "password": "123",
       "phone": "12345",
-      "email": "hello@gmail.com"
+      "email": "hello@gmail.com",
+      "key": ""
     },
     {
       "userType": "tenant",
@@ -85,87 +86,69 @@
       "landlord": "janette"
     },
     {
-      "address": "abch",
-      "key": 2,
-      "landlord": "janette"
-    },
-    {
-      "address": "jii",
+      "address": "hjhk",
       "key": 1,
       "landlord": "janette"
-    },
-    {
-      "address": "hjhk",
-      "key": 7,
-      "landlord": "me"
     }
   ],
-  "services": [
-    {
-      "service": "Shower Repair",
-      "date": "2019-10-15",
-      "desc": "No water",
-      "apt": "56",
-      "serviceid": "Shower Repair56"
-    },
-    {
-      "service": "Drain",
-      "date": "2019-10-07",
-      "desc": "no hole",
-      "apt": "56 Dover St",
-      "serviceid": "Drain56 Dover St"
-    },
-    {
-      "service": "Deomlish",
-      "date": "2019-10-16",
-      "desc": "Time to go..",
-      "apt": "55 Dover",
-      "serviceid": "Deomlish55 Dover"
-    },
-    {
-      "service": "Test",
-      "date": "2019-10-14",
-      "desc": "test",
-      "apt": "test",
-      "serviceid": "Testtest"
-    }
-  ],
+  "keycount": 9,
   "events": [
     {
       "eventname": "BBQ",
       "day": "2019-10-23",
       "desc": "Veggis can die",
-      "apt": "56 Fluffy St",
+      "apt": 8,
       "eventid": "BBQ56 Fluffy St"
     },
     {
-      "eventname": "",
-      "day": "",
+      "eventname": "House Tour",
+      "day": "2019-10-23",
       "desc": "",
-      "apt": "",
+      "apt": 8,
       "eventid": ""
     },
     {
       "eventname": "test",
       "day": "2019-10-16",
       "desc": "test",
-      "apt": "test",
+      "apt": 1,
+      "eventid": "testtest"
+    },
+    {
+      "eventname": "BBQ2",
+      "day": "2019-10-23",
+      "desc": "Veggis can die",
+      "apt": 1,
+      "eventid": "BBQ56 Fluffy St"
+    },
+    {
+      "eventname": "House Tour2",
+      "day": "2019-10-16",
+      "desc": "",
+      "apt": 1,
+      "eventid": ""
+    },
+    {
+      "eventname": "test2",
+      "day": "2019-10-16",
+      "desc": "test",
+      "apt": 8,
       "eventid": "testtest"
     }
   ],
   "payments": [
     {
-      "amount": "20",
-      "due": "2019-10-17",
+      "amount": "$20",
+      "due": "2019-10-23",
       "desc": "Rent",
-      "apt": "56 Dover st",
+      "apt": 8,
       "paymentid": "Rent56 Dover st"
     },
     {
-      "amount": "500",
-      "due": "2019-10-13",
+      "amount": "$500",
+      "due": "2019-10-16",
       "desc": "Fridge",
-      "apt": "44 Dover St",
+      "apt": 1,
       "paymentid": "Fridge44 Dover St"
     },
     {
@@ -204,5 +187,34 @@
       "paymentid": "ujfvjhrwvlh,1"
     }
   ],
-  "keycount": 9
+  "services": [
+    {
+      "service": "Shower Repair",
+      "date": "2019-10-15",
+      "desc": "No water",
+      "apt": 8,
+      "serviceid": "Shower Repair56"
+    },
+    {
+      "service": "Drain",
+      "date": "2019-10-16",
+      "desc": "no hole",
+      "apt": "56 Dover St",
+      "serviceid": "Drain56 Dover St"
+    },
+    {
+      "service": "Deomlish",
+      "date": "2019-10-16",
+      "desc": "Time to go..",
+      "apt": 1,
+      "serviceid": "Deomlish55 Dover"
+    },
+    {
+      "service": "Test",
+      "date": "2019-10-14",
+      "desc": "test",
+      "apt": 5,
+      "serviceid": "Testtest"
+    }
+  ]
 }

@@ -2,6 +2,9 @@ import * as contact from './mods/contact.js'
 import * as calendar from './mods/calendar.js'
 import * as payment from './mods/payment.js'
 
+contact.hello()
+payment.hello()
+
 // Nav Buttons
 var contactBtn = document.getElementById("contact")
 var calendarBtn = document.getElementById("calendar")
@@ -12,6 +15,13 @@ var contactScreen = document.getElementById("contactScreen")
 var calendarScreen = document.getElementById("calendarScreen")
 var paymentScreen = document.getElementById("paymentScreen")
 
+let element = document.getElementById("my-calendar");
+let day = document.getElementById("date")
+let calpayment = document.getElementById("CalPayment")
+let event = document.getElementById("Event")
+let service = document.getElementById("Service")
+calendar.calendar(element, calpayment, event, service, day)
+
 window.onload = function () {
     const contactBtn = document.querySelector('#contact')
     contactBtn.onclick = switchToContact
@@ -20,6 +30,17 @@ window.onload = function () {
     const paymentBtn = document.querySelector('#payment')
     paymentBtn.onclick = switchToPayment
 
+    fetch('/currentUser', {
+        method: 'GET'
+    }).then(function(response) {
+        return response.json()
+    }).then(function(data) {
+        console.log("data", data)
+        console.log(data.first)
+        console.log(data.last)
+        const welcomeTxt = document.querySelector('.welcome')
+        welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
+    })
     // Contact Screen
     contact.reset()
     const updateProfileBtn = document.querySelector(".updateBtnFun")
