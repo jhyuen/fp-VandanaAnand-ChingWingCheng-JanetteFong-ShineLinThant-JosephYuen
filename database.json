@@ -28,11 +28,60 @@
       "phone": "12345",
       "email": "hello@gmail.com",
       "key": ""
+    },
+    {
+      "userType": "tenant",
+      "first": "WebwareFirst",
+      "last": "WebwareLast",
+      "username": "webware",
+      "password": "webware1",
+      "phone": "0000000000",
+      "email": "webware@wpi.edu"
+    },
+    {
+      "userType": "tenant",
+      "first": "WebFirst",
+      "last": "WebLast",
+      "username": "web",
+      "password": "web1",
+      "phone": "1111111111",
+      "email": "web@wpi.edu",
+      "key": "webkey"
+    },
+    {
+      "userType": "tenant",
+      "first": "John",
+      "last": "Smith",
+      "username": "t1",
+      "password": "t1",
+      "phone": "21323",
+      "email": "2313",
+      "key": "8"
+    },
+    {
+      "userType": "tenant",
+      "first": "foisie",
+      "last": "foisielast",
+      "username": "foisie",
+      "password": "foisie1",
+      "phone": "8888888888",
+      "email": "foisie@wpi.edu",
+      "key": 400
+    },
+    {
+      "userType": "tenant",
+      "first": "ww",
+      "last": "www",
+      "username": "wwww",
+      "password": "www",
+      "phone": "1111111111",
+      "email": "asdf",
+      "key": 123445
     }
   ],
   "apartments": [
     {
-      "address": "hjhk",
+      "address": "44 Somerset St. Apt. 2",
       "key": 8,
       "landlord": "janette"
     },
@@ -89,14 +138,14 @@
   ],
   "payments": [
     {
-      "amount": "20",
+      "amount": "$20",
       "due": "2019-10-23",
       "desc": "Rent",
       "apt": 8,
       "paymentid": "Rent56 Dover st"
     },
     {
-      "amount": "500",
+      "amount": "$500",
       "due": "2019-10-16",
       "desc": "Fridge",
       "apt": 1,
@@ -110,11 +159,32 @@
       "paymentid": "New House33 Dover St"
     },
     {
+      "amount": "",
+      "due": "",
+      "desc": "",
+      "apt": "",
+      "paymentid": ""
+    },
+    {
       "amount": "$0.00",
       "due": "2019-10-02",
       "desc": "test",
-      "apt": 8,
+      "apt": "test",
       "paymentid": "testtest"
+    },
+    {
+      "amount": "8",
+      "due": "2019-10-11",
+      "desc": "yuop",
+      "apt": "2",
+      "paymentid": "yuop2"
+    },
+    {
+      "amount": "$90.00",
+      "due": "2019-10-17",
+      "desc": "ujfvjhrwvlh,",
+      "apt": "1",
+      "paymentid": "ujfvjhrwvlh,1"
     }
   ],
   "services": [

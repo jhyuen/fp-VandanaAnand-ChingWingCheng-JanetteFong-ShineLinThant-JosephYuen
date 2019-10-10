@@ -41,6 +41,10 @@ window.onload = function () {
         const welcomeTxt = document.querySelector('.welcome')
         welcomeTxt.innerText = "Welcome " + data.first + " " + data.last
     })
+    // Contact Screen
+    contact.reset()
+    const updateProfileBtn = document.querySelector(".updateBtnFun")
+    updateProfileBtn.onclick = contact.updateProfile
 }
 
 const switchToContact = function(e) {
