@@ -77,8 +77,6 @@ const adapter = new FileSync("database.json")
 const db = low(adapter)
 db.defaults({ users: [], apartments: [], keycount: 1 }).write()
 
-
-
 app.post("/signUp", (req, res) => {
   let user = db.get("users").filter({ username: req.body.username })
   console.log(user.value().length)
@@ -159,6 +157,10 @@ app.post( '/updateProfile', function( request, response ) {
     response.writeHead( 200, "OK", {'Content-Type': 'application/json' })
     response.end()
   })
+})
+
+app.get('/getServices', function(req,res) {
+  res.send(JSON.stringify(db.get('services').filter({}).values()))
 })
 
 app.listen(process.env.PORT || port, process.env.IP, () => {
