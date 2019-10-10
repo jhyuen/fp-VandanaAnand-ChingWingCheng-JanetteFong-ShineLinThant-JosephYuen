@@ -27,6 +27,25 @@
       "password": "123",
       "phone": "12345",
       "email": "hello@gmail.com"
+    },
+    {
+      "userType": "tenant",
+      "first": "WebwareFirst",
+      "last": "WebwareLast",
+      "username": "webware",
+      "password": "webware1",
+      "phone": "0000000000",
+      "email": "webware@wpi.edu"
+    },
+    {
+      "userType": "tenant",
+      "first": "WebFirst",
+      "last": "WebLast",
+      "username": "web",
+      "password": "web1",
+      "phone": "1111111111",
+      "email": "web@wpi.edu",
+      "key": "webkey"
     }
   ],
   "apartments": [
