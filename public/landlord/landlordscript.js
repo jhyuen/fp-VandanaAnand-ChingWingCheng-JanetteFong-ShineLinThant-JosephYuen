@@ -9,7 +9,7 @@ var scheduleScreen = document.getElementById("scheduleScreen")
 
 let apts;
 let element = document.getElementById("my-calendar");
-let day = document.getElementById("date")
+let day = document.getElementById("caldate")
 let payment = document.getElementById("Payment")
 let event = document.getElementById("Event")
 let service = document.getElementById("Service")
