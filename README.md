@@ -5,7 +5,7 @@
 
 ## Team Members
 - [Vandana Anand](https://github.com/vanand23): Passport login and payments 
-- [Ching Wing Cheng](https://github.com/WinnyCheng): Passport register user and calendar
+- [Ching Wing Cheng](https://github.com/WinnyCheng): Passport user registration and calendar
 - [Janette Fong](https://github.com/jlfong): Calendar and events 
 - [Shine Lin Thant](https://github.com/heartkiIIer): Scheduling Payments and database structure
 - [Joseph Yuen](https://github.com/jhyuen): Design User Mockups for the screens, contacts, and managing apartments
