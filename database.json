@@ -56,6 +56,26 @@
       "phone": "21323",
       "email": "2313",
       "key": "8"
+    },
+    {
+      "userType": "tenant",
+      "first": "foisie",
+      "last": "foisielast",
+      "username": "foisie",
+      "password": "foisie1",
+      "phone": "8888888888",
+      "email": "foisie@wpi.edu",
+      "key": 400
+    },
+    {
+      "userType": "tenant",
+      "first": "ww",
+      "last": "www",
+      "username": "wwww",
+      "password": "www",
+      "phone": "1111111111",
+      "email": "asdf",
+      "key": 123445
     }
   ],
   "apartments": [
