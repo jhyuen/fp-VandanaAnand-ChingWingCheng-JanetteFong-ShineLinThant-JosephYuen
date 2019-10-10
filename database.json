@@ -50,12 +50,12 @@
     },
     {
       "userType": "tenant",
-      "first": "John",
-      "last": "Smith",
+      "first": "Joe",
+      "last": "Yuen",
       "username": "t1",
       "password": "t1",
-      "phone": "21323",
-      "email": "2313",
+      "phone": "123-456-7890",
+      "email": "jhyuen@wpi.edu",
       "key": 8
     },
     {

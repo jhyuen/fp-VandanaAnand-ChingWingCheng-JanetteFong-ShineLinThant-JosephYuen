@@ -67,6 +67,11 @@ const reset = function () {
       }).then(function (data) {
         
         // clear roommates
+        const myNode = document.querySelector(".tenants-group");
+        while (myNode.firstChild) {
+          myNode.removeChild(myNode.firstChild);
+        }
+
         for(var i=0;i<data.length;i++) {
 
           // don't list self as roommate
@@ -82,7 +87,7 @@ const reset = function () {
               <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
               <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
             </div>
-            */
+          */
           var roommateBlock = document.createElement( 'div' )
           roommateBlock.className = "tenant"
 
