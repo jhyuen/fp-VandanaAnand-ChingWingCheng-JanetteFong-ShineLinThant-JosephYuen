@@ -65,8 +65,15 @@ const addUser = function(e) {
             email: email
         }
 
-        if (userType === "tenant") {
-            user.key = document.getElementById("Key").value
+        if(userType === "tenant") {
+            let key = document.getElementById("Key").value
+            if(key === "") {
+                alert("Landlord key invaild")
+                return
+            }
+            else {
+                user.key = parseInt(key, 10)
+            }
         }
 
         const data = JSON.stringify(user)
