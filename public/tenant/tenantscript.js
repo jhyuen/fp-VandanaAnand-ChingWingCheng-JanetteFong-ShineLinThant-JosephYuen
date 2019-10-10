@@ -2,7 +2,6 @@ import * as contact from './mods/contact.js'
 import * as calendar from './mods/calendar.js'
 import * as payment from './mods/payment.js'
 
-contact.hello()
 payment.hello()
 
 // Nav Buttons
