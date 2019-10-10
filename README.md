@@ -4,7 +4,7 @@
 [https://www.google.com/?client=safari](https://www.google.com/?client=safari)
 
 ## Team Members
-- [Vandana Anand](https://github.com/vanand23): Passport login and payments UI
+- [Vandana Anand](https://github.com/vanand23): Passport login and payments 
 - [Ching Wing Cheng](https://github.com/WinnyCheng): Passport register user and calendar
 - [Janette Fong](https://github.com/jlfong): Calendar and events 
 - [Shine Lin Thant](https://github.com/heartkiIIer): Scheduling Payments and database structure
