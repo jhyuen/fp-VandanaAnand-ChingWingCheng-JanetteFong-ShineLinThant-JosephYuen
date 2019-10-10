@@ -64,7 +64,6 @@ app.post('/test', function (req, res) {
 
 app.get('/currentUser', function (req, res) {
 
-
   res.send(JSON.stringify(db.get('users').find({ username: credentials }).value()))
 })
 
@@ -88,6 +87,11 @@ app.get('/getRoommates', function (req, res) {
   console.log(roommates)
   res.send(JSON.stringify(roommates))
 })
+
+app.get('/getUsers', function (req, res) {
+  res.send(JSON.stringify(db.get('users').value()))
+})
+
 
 //Calendar for Landlord
 app.get('/getEventslandlord', function(req, res){

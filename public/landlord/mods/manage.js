@@ -23,6 +23,8 @@ var apartmentAddressForm = document.getElementById("Address")
 var addApartmentBtn = document.getElementsByClassName("addApartmentBtnFun")
 
 // Apartment Info
+var apartmentName = document.getElementById("apartmentName")
+var landlordkey = document.getElementById("landlordkey")
 
 // reset fields and refresh page
 const reset = function () {
@@ -60,8 +62,121 @@ const reset = function () {
     apartmentAddressForm.placeholder = "100 Institute Road"
 
     // load apartments
+    fetch('/getApartments', {
+      method: 'GET'
+    }).then(function (response) {
+      return response.json()
+    }).then(function (data) {
 
-    console.log("loading apartments")
+      // clear apartments
+      const myNode = document.querySelector(".apartment-group");
+      while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+      }
+
+      console.log(data)
+      for (let apartment of data) {
+
+        var apartmentBtn = document.createElement('button')
+        apartmentBtn.innerText = apartment.address
+
+        apartmentBtn.onclick = function () {
+
+          landlordProfileScreen.style.display = "none"
+          addApartmentScreen.style.display = "none"
+          apartmentInfoScreen.style.display = "block"
+
+          // clear tenants
+          const myTenant = document.querySelector(".tenants-group");
+          while (myTenant.firstChild) {
+            myTenant.removeChild(myTenant.firstChild);
+          }
+
+          apartmentName.innerText = apartment.address
+          landlordkey.innerText = "Key: " + apartment.key
+
+          let key = apartment.key
+
+          fetch('/getUsers', {
+            method: 'GET'
+          }).then(function (response) {
+            return response.json()
+          }).then(function (data) {
+
+            for (let user of data) {
+              if (key === user.key) {
+                var roommateBlock = document.createElement('div')
+                roommateBlock.className = "tenant"
+
+                var newline = document.createElement("br")
+
+                var space = document.createElement('p')
+                space.innerText = " "
+
+                var morespace = document.createElement('br')
+
+                var nameblock = document.createElement('a')
+                nameblock.innerText = user.first + " " + user.last
+
+                var phoneIcon = document.createElement('i')
+                phoneIcon.className = "fa fa-phone"
+
+                var phoneblock = document.createElement('b')
+                phoneblock.innerHTML = '&nbsp;&nbsp;' + user.phone
+
+                var emailIcon = document.createElement('i')
+                emailIcon.className = "fa fa-envelope"
+
+                var emailblock = document.createElement('c')
+                emailblock.innerHTML = '&nbsp;&nbsp;' + user.email
+
+                roommateBlock.appendChild(nameblock)
+                roommateBlock.appendChild(space)
+                roommateBlock.appendChild(newline)
+                roommateBlock.appendChild(morespace)
+                roommateBlock.appendChild(phoneIcon)
+                roommateBlock.appendChild(phoneblock)
+                roommateBlock.appendChild(space)
+                roommateBlock.appendChild(emailIcon)
+                roommateBlock.appendChild(emailblock)
+
+
+                document.querySelector(".tenants-group").appendChild(roommateBlock)
+              }
+            }
+
+            /*
+              <div class="tenant">
+                <a>FirstName LastName</a><br><br>
+                <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+                <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+              </div>
+            */
+
+            console.log("loading Apartment")
+          })
+
+        }
+
+        document.querySelector(".apartment-group").appendChild(apartmentBtn)
+
+      }
+      /*
+          <button id="testbtn">Apartment 1</button>
+                  <button>Apartment 2</button>
+                  <button>Apartment 3</button>
+                  <button>Apartment 4</button>
+                  <button>Apartment 5</button>
+                  <button>Apartment 6</button>
+                  <button>Apartment 2</button>
+                  <button>Apartment 3</button>
+                  <button>Apartment 4</button>
+                  <button>Apartment 5</button>
+                  <button>Apartment 6</button>
+                  */
+
+      console.log("loading apartments")
+    })
 
   })
 
@@ -87,16 +202,6 @@ const loadAddApartment = function (e) {
   apartmentInfoScreen.style.display = "none"
 
   console.log("loading Add Apartment")
-}
-
-const loadApartment = function (e) {
-  e.preventDefault()
-
-  landlordProfileScreen.style.display = "none"
-  addApartmentScreen.style.display = "none"
-  apartmentInfoScreen.style.display = "block"
-
-  console.log("loading Apartment")
 }
 
 // Add Apartment Screen
@@ -174,4 +279,4 @@ const updateProfile = function (e) {
 }
 
 // Export functions and const
-export { reset, loadProfile, loadAddApartment, loadApartment, addApartment, updateProfile }
+export { reset, loadProfile, loadAddApartment, addApartment, updateProfile }

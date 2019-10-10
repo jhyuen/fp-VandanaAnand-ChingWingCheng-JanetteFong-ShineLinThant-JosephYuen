@@ -175,28 +175,6 @@ label {
   height: 33.33%;
 }
 
-.deleteApartmentBtnFun {
-  margin-top: 30px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.3s;
-  background-color: white;
-  border: 4px solid #F2655A;
-  border-radius: 2px;
-  color: #F2655A;
-  padding: 12px;
-  width: 250px;
-  text-align: center;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 18px;
-}
-
-.deleteApartmentBtnFun:hover {
-  cursor: pointer;
-  background-color: #F2655A;
-  color: white;
-}
-
 .profileBtn {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.3s;

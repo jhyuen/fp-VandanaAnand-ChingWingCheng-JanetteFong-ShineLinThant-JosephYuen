@@ -81,13 +81,14 @@ const reset = function () {
         
           console.log(data[i])
 
-          /*
+          /* Rooommate HTML
           <div class="tenant">
               <a>FirstName LastName</a><br><br>
               <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
               <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
             </div>
           */
+         
           var roommateBlock = document.createElement( 'div' )
           roommateBlock.className = "tenant"
 
