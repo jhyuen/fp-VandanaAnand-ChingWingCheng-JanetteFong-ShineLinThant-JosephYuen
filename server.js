@@ -66,6 +66,28 @@ app.get('/currentUser', function (req, res) {
   res.send(JSON.stringify(db.get('users').find({ username: credentials }).value()))
 })
 
+app.get('/getAdmin', function (req, res) {
+  
+  const user = db.get('users').find({username: credentials}).value()
+  console.log(user)
+  console.log(user.key)
+  const apartment = db.get('apartments').find({key: user.key}).value()
+  console.log(apartment)
+  const admin = db.get('users').find({ username: apartment.landlord }).value()
+  console.log(admin)
+  res.send(JSON.stringify(db.get('users').find({ username: apartment.landlord }).value()))
+})
+
+app.get('/getRoommates', function (req, res) {
+
+  const user = db.get('users').find({username: credentials}).value()
+  const apartment = db.get('apartments').find({key: user.key}).value()
+  const roommates = db.get('users').filter({key: apartment.key}).value()
+  console.log(roommates)
+  res.send(JSON.stringify(roommates))
+
+})
+
 // domain views index.html
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html');

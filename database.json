@@ -55,7 +55,37 @@
       "password": "t1",
       "phone": "21323",
       "email": "2313",
-      "key": "8"
+      "key": 8
+    },
+    {
+      "userType": "tenant",
+      "first": "John",
+      "last": "Smith",
+      "username": "t2",
+      "password": "t2",
+      "phone": "21323",
+      "email": "2313",
+      "key": 8
+    },
+    {
+      "userType": "tenant",
+      "first": "John",
+      "last": "Smith",
+      "username": "t3",
+      "password": "t3",
+      "phone": "21323",
+      "email": "2313",
+      "key": 8
+    },
+    {
+      "userType": "tenant",
+      "first": "John",
+      "last": "Smith",
+      "username": "t4",
+      "password": "t4",
+      "phone": "21323",
+      "email": "2313",
+      "key": 8
     }
   ],
   "apartments": [

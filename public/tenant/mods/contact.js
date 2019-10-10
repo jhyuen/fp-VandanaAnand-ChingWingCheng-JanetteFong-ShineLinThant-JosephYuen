@@ -33,6 +33,9 @@ const reset = function () {
     var phone = data.phone
     var email = data.email
 
+    // used for getting roommates later on b/c you don't grab yourself
+    var username = data.username
+
     tenantName.innerText = firstName + " " + lastName
     userinfoPhone.innerText = phone
     userinfoEmail.innerText = email
@@ -53,9 +56,74 @@ const reset = function () {
       return response.json()
     }).then(function (data) {
       
-      landlordName.innerText = data.firstName + " " + data.lastName
+      landlordName.innerText = data.first + " " + data.last
       landlordPhone.innerText = data.phone
       landlordEmail.innerText = data.email
+
+      fetch('/getRoommates', {
+        method: 'GET'
+      }).then(function (response) {
+        return response.json()
+      }).then(function (data) {
+        
+        // clear roommates
+        for(var i=0;i<data.length;i++) {
+
+          // don't list self as roommate
+          if (data[i].username === username) {
+            continue;
+          }
+        
+          console.log(data[i])
+
+          /*
+          <div class="tenant">
+              <a>FirstName LastName</a><br><br>
+              <i class="fa fa-phone"></i>&nbsp;&nbsp;<b>123-456-7890</b><br><br>
+              <i class="fa fa-envelope"></i>&nbsp;&nbsp;<c>jonsmith@wpi.edu</c>
+            </div>
+            */
+          var roommateBlock = document.createElement( 'div' )
+          roommateBlock.className = "tenant"
+
+          var newline = document.createElement( "br" )
+
+          var space = document.createElement( 'p' )
+          space.innerText = " "
+
+          var morespace = document.createElement( 'br' )
+          
+          var nameblock = document.createElement( 'a' )
+          nameblock.innerText = data[i].first + " " + data[i].last
+          
+          var phoneIcon = document.createElement( 'i')
+          phoneIcon.className = "fa fa-phone"
+
+          var phoneblock = document.createElement( 'b' )
+          phoneblock.innerHTML = '&nbsp;&nbsp;' + data[i].phone
+
+          var emailIcon = document.createElement( 'i' )
+          emailIcon.className = "fa fa-envelope"
+
+          var emailblock = document.createElement( 'c' )
+          emailblock.innerHTML = '&nbsp;&nbsp;' + data[i].email
+
+          roommateBlock.appendChild(nameblock)
+          roommateBlock.appendChild(space)
+          roommateBlock.appendChild(newline)
+          roommateBlock.appendChild(morespace)
+          roommateBlock.appendChild(phoneIcon)
+          roommateBlock.appendChild(phoneblock)
+          roommateBlock.appendChild(space)
+          roommateBlock.appendChild(emailIcon)
+          roommateBlock.appendChild(emailblock)
+
+          document.querySelector(".tenants-group").appendChild(roommateBlock)
+
+          // add roommate code one at a time
+        }
+        
+      })
     })
     console.log("reset")
   })
