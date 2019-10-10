@@ -66,31 +66,39 @@ app.get('/currentUser', function (req, res) {
   res.send(JSON.stringify(db.get('users').find({ username: credentials }).value()))
 })
 
+//Calendar for Landlord
 app.get('/getEventslandlord', function(req, res){
   const apartments = db.get('apartments').filter({landlord: credentials}).value()
   let eventList = []
   for(let apt of apartments){
-    eventList = eventList.concat(db.get('events').filter({key: apt.key}).value())
+    eventList = eventList.concat(db.get('events').filter({apt: apt.key}).value())
   }
   res.send(JSON.stringify(eventList))
 })
-
 app.get('/getPaylandlord', function(req, res){
   const apartments = db.get('apartments').filter({landlord: credentials}).value()
   let paylist = []
   for(let apt of apartments){
-    paylist = paylist.concat(db.get('payments').filter({key: apt.key}).value())
+    paylist = paylist.concat(db.get('payments').filter({apt: apt.key}).value())
   }
   res.send(JSON.stringify(paylist))
 })
-
 app.get('/getServicelandlord', function(req, res){
   const apartments = db.get('apartments').filter({landlord: credentials}).value()
   let servicelist = []
   for(let apt of apartments){
-    servicelist = servicelist.concat(db.get('services').filter({key: apt.key}).value())
+    servicelist = servicelist.concat(db.get('services').filter({apt: apt.key}).value())
   }
   res.send(JSON.stringify(servicelist))
+})
+
+//TenantPayment
+app.get('/payments', function (req, res) {
+  // res.send(JSON.stringify(db.get('payments').filter({ key:req.body }).values()))
+  const k = db.get('users').find({username:credentials}).value().key
+  const payment = db.get('payments').filter({apt: k}).value()
+  console.log(payment)
+  res.send(JSON.stringify(payment))
 })
 
 // domain views index.html
