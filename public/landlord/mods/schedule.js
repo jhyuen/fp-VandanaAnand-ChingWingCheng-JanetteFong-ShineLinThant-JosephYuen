@@ -12,7 +12,7 @@ const addPayment = function(e){
     let amount = document.getElementById("amount").value
     let due = document.getElementById("due").value
     let desc = document.getElementById("paydescription").value
-    let apt = document.getElementById("paymentapartment").value
+    let apt = parseInt(document.getElementById("paymentapartment").value, 10)
     let paymentid = desc + apt
 
     let payment = {
@@ -54,7 +54,7 @@ const addService = function(e){
     let servicetitle = document.getElementById("servicetitle").value
     let date = document.getElementById("date").value
     let desc = document.getElementById("servicedescription").value
-    let apt = document.getElementById("serviceapartment").value
+    let apt = parseInt(document.getElementById("serviceapartment").value, 10)
     let serviceid = servicetitle + apt
 
     let service = {
@@ -96,7 +96,7 @@ const addEvent = function(e){
     let eventname = document.getElementById("eventname").value
     let day = document.getElementById("day").value
     let desc = document.getElementById("eventdescription").value
-    let apt = document.getElementById("eventapartment").value
+    let apt = parseInt(document.getElementById("eventapartment").value, 10)
     let eventid = eventname + apt
 
     let event = {

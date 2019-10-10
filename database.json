@@ -164,6 +164,27 @@
       "desc": "test",
       "apt": 8,
       "eventid": "testtest"
+    },
+    {
+      "eventname": "finalproject",
+      "day": "2019-10-11",
+      "desc": "webware ha",
+      "apt": 198,
+      "eventid": "finalproject1"
+    },
+    {
+      "eventname": "hi",
+      "day": "2019-10-13",
+      "desc": "bye",
+      "apt": 535,
+      "eventid": "hi1"
+    },
+    {
+      "eventname": "water",
+      "day": "2019-10-14",
+      "desc": "bye",
+      "apt": 1,
+      "eventid": "water1"
     }
   ],
   "payments": [
@@ -185,36 +206,43 @@
       "amount": "$9,000.00",
       "due": "2020-01-10",
       "desc": "New House",
-      "apt": "33 Dover St",
+      "apt": 33,
       "paymentid": "New House33 Dover St"
-    },
-    {
-      "amount": "",
-      "due": "",
-      "desc": "",
-      "apt": "",
-      "paymentid": ""
     },
     {
       "amount": "$0.00",
       "due": "2019-10-02",
       "desc": "test",
-      "apt": "test",
+      "apt": 44,
       "paymentid": "testtest"
     },
     {
       "amount": "8",
       "due": "2019-10-11",
       "desc": "yuop",
-      "apt": "2",
+      "apt": 27,
       "paymentid": "yuop2"
     },
     {
       "amount": "$90.00",
       "due": "2019-10-17",
       "desc": "ujfvjhrwvlh,",
-      "apt": "1",
+      "apt": 80,
       "paymentid": "ujfvjhrwvlh,1"
+    },
+    {
+      "amount": "$999.00",
+      "due": "2019-10-10",
+      "desc": "mean girls 10",
+      "apt": 562,
+      "paymentid": "mean girls 101"
+    },
+    {
+      "amount": "$77.00",
+      "due": "2019-10-25",
+      "desc": "food",
+      "apt": 8,
+      "paymentid": "food8"
     }
   ],
   "services": [
@@ -229,7 +257,7 @@
       "service": "Drain",
       "date": "2019-10-16",
       "desc": "no hole",
-      "apt": "56 Dover St",
+      "apt": 56,
       "serviceid": "Drain56 Dover St"
     },
     {
@@ -245,6 +273,12 @@
       "desc": "test",
       "apt": 5,
       "serviceid": "Testtest"
+    },
+    {
+      "service": "broken toilet",
+      "desc": "it's leeking",
+      "apt": 8,
+      "serviceid": "broken toilet8"
     }
   ]
 }

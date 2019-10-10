@@ -2,6 +2,8 @@ import * as contact from './mods/contact.js'
 import * as calendar from './mods/calendar.js'
 import * as payment from './mods/payment.js'
 
+payment.hello()
+
 // Nav Buttons
 var contactBtn = document.getElementById("contact")
 var calendarBtn = document.getElementById("calendar")
