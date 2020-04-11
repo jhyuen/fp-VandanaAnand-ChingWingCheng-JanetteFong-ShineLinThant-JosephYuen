@@ -1,7 +1,7 @@
 ## Knock! Knock!
 
 ## Project Link
-[http://fp-cs4241.glitch.me](http://fp-cs4241.glitch.me)
+[https://knocknock.glitch.me](https://knocknock.glitch.me)
 
 ## Team Members
 - [Vandana Anand](https://github.com/vanand23): Passport login and payments 
